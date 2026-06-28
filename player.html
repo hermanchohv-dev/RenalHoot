@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RenalHoot — Participante</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap');
+
+  :root {
+    --bg: #0d1117;
+    --surface: #161b22;
+    --surface2: #1f2937;
+    --border: #30363d;
+    --accent: #00c8a0;
+    --accent2: #ff6b6b;
+    --accent3: #ffd166;
+    --text: #e6edf3;
+    --text-muted: #7d8590;
+    --radius: 12px;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Space Grotesk', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 24px;
+    border-bottom: 1px solid var(--border);
+    background: var(--surface);
+  }
+
+  .logo { font-size: 20px; font-weight: 700; color: var(--accent); }
+  .logo span { color: var(--text); }
+
+  .badge {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 4px 10px;
+    color: var(--text-muted);
+  }
+
+  main {
+    flex: 1;
+    padding: 24px;
+    max-width: 640px;
+    margin: 0 auto;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* SCREENS */
+  .screen { display: none; flex: 1; flex-direction: column; }
+  .screen.active { display: flex; }
+
+  /* JOIN */
+  #screen-join {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 24px;
+  }
+
+  .join-logo {
+    font-size: 48px;
+    font-weight: 700;
+    color: var(--accent);
+  }
+
+  .join-logo span { color: var(--text); }
+
+  .input-group {
+    width: 100%;
+    max-width: 320px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  input[type="text"] {
+    width: 100%;
+    padding: 14px 18px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    color: var(--text);
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 16px;
+    outline: none;
+    transition: border-color 0.2s;
+  }
+
+  input[type="text"]:focus { border-color: var(--accent); }
+  input[type="text"]::placeholder { color: var(--text-muted); }
+
+  .code-input {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 24px;
+    letter-spacing: 6px;
+    text-align: center;
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 14px 28px;
+    border-radius: 8px;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    border: none;
+    transition: opacity 0.2s, transform 0.1s;
+    width: 100%;
+  }
+
+  .btn:hover { opacity: 0.85; }
+  .btn:active { transform: scale(0.98); }
+  .btn:disabled { opacity: 0.4; cursor: not-allowed; }
+  .btn-primary { background: var(--accent); color: #0d1117; }
+  .btn-ghost { background: var(--surface2); color: var(--text); border: 1px solid var(--border); }
+
+  /* WAITING */
+  #screen-waiting {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 20px;
+  }
+
+  .pulse-dot {
+    width: 16px; height: 16px;
+    background: var(--accent);
+    border-radius: 50%;
+    animation: pulseDot 1.2s infinite;
+    margin: 0 auto;
+  }
+
+  @keyframes pulseDot {
+    0%, 100% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.4); opacity: 0.6; }
+  }
+
+  .waiting-name {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--accent);
+  }
+
+  .waiting-sala {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
+    color: var(--text-muted);
+  }
+
+  /* QUESTION */
+  #screen-question { gap: 16px; }
+
+  .timer-bar {
+    height: 6px;
+    background: var(--surface2);
+    border-radius: 3px;
+    overflow: hidden;
+  }
+
+  .timer-fill {
+    height: 100%;
+    background: var(--accent3);
+    transition: width 1s linear;
+    border-radius: 3px;
+  }
+
+  .timer-fill.urgent { background: var(--accent2); }
+
+  .q-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .q-num-badge {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    color: var(--text-muted);
+    background: var(--surface2);
+    border-radius: 6px;
+    padding: 4px 10px;
+  }
+
+  .timer-num {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--accent3);
+  }
+
+  .timer-num.urgent { color: var(--accent2); }
+
+  .question-text {
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 1.45;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 20px;
+  }
+
+  .options-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    flex: 1;
+  }
+
+  .option-btn {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 18px 20px;
+    border-radius: var(--radius);
+    border: 2px solid transparent;
+    cursor: pointer;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    text-align: left;
+    transition: transform 0.15s, opacity 0.2s, border-color 0.2s;
+    color: var(--text);
+  }
+
+  .option-btn:hover:not(:disabled) { transform: translateX(4px); }
+  .option-btn:active:not(:disabled) { transform: scale(0.98); }
+
+  .option-btn.A { background: rgba(255,107,107,0.15); border-color: rgba(255,107,107,0.5); }
+  .option-btn.B { background: rgba(69,183,209,0.15); border-color: rgba(69,183,209,0.5); }
+  .option-btn.C { background: rgba(255,209,102,0.15); border-color: rgba(255,209,102,0.5); }
+  .option-btn.D { background: rgba(0,200,160,0.15); border-color: rgba(0,200,160,0.5); }
+
+  .option-btn.selected { filter: brightness(1.4); transform: scale(1.02); }
+  .option-btn.correct { border-color: var(--accent) !important; background: rgba(0,200,160,0.3) !important; }
+  .option-btn.wrong { opacity: 0.4; }
+  .option-btn:disabled { cursor: default; }
+
+  .option-letter-badge {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
+    font-weight: 700;
+    min-width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255,255,255,0.1);
+    border-radius: 6px;
+  }
+
+  /* FEEDBACK */
+  .feedback-bar {
+    padding: 16px 20px;
+    border-radius: var(--radius);
+    font-weight: 600;
+    font-size: 16px;
+    text-align: center;
+    display: none;
+  }
+
+  .feedback-bar.correct { background: rgba(0,200,160,0.2); border: 1px solid var(--accent); color: var(--accent); }
+  .feedback-bar.wrong { background: rgba(255,107,107,0.2); border: 1px solid var(--accent2); color: var(--accent2); }
+  .feedback-bar.no-answer { background: rgba(255,209,102,0.2); border: 1px solid var(--accent3); color: var(--accent3); }
+
+  .explanation-box {
+    background: rgba(0,200,160,0.06);
+    border: 1px solid rgba(0,200,160,0.25);
+    border-radius: 8px;
+    padding: 14px 16px;
+    font-size: 13px;
+    line-height: 1.6;
+    color: var(--text-muted);
+  }
+
+  .explanation-box strong { color: var(--accent); }
+
+  /* SCORE */
+  #screen-score {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 16px;
+  }
+
+  .score-big {
+    font-size: 72px;
+    font-weight: 700;
+    color: var(--accent);
+    line-height: 1;
+  }
+
+  .score-label { font-size: 14px; color: var(--text-muted); }
+
+  .rank-chip {
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 8px 20px;
+    font-size: 14px;
+    color: var(--text-muted);
+  }
+
+  /* FINAL */
+  #screen-final {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 20px;
+  }
+
+  .podium-list { width: 100%; text-align: left; }
+  .podium-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 16px;
+    background: var(--surface);
+    border-radius: 8px;
+    margin-bottom: 8px;
+    border: 1px solid var(--border);
+  }
+
+  .podium-rank { font-size: 22px; min-width: 36px; }
+  .podium-name { flex: 1; font-weight: 600; }
+  .podium-pts {
+    font-family: 'JetBrains Mono', monospace;
+    color: var(--accent);
+    font-weight: 700;
+  }
+
+  .podium-item.is-me { border-color: var(--accent); background: rgba(0,200,160,0.08); }
+
+  .error-msg {
+    color: var(--accent2);
+    font-size: 13px;
+    text-align: center;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo">Renal<span>Hoot</span></div>
+  <div class="badge" id="header-badge">PARTICIPANTE</div>
+</header>
+
+<main>
+
+  <!-- JOIN -->
+  <div class="screen active" id="screen-join">
+    <div class="join-logo">Renal<span>Hoot</span></div>
+    <p style="color:var(--text-muted); font-size:14px;">Introduce el código de sala y tu nombre</p>
+    <div class="input-group">
+      <input type="text" id="input-code" class="code-input" placeholder="000000" maxlength="6" inputmode="numeric">
+      <input type="text" id="input-name" placeholder="Tu nombre o iniciales" maxlength="20">
+      <div class="error-msg" id="join-error" style="display:none;"></div>
+      <button class="btn btn-primary" id="btn-join">Unirme →</button>
+    </div>
+  </div>
+
+  <!-- WAITING -->
+  <div class="screen" id="screen-waiting">
+    <div class="pulse-dot"></div>
+    <div class="waiting-name" id="waiting-name"></div>
+    <div style="font-size:15px; color:var(--text-muted);">Esperando que el profesor inicie el quiz...</div>
+    <div class="waiting-sala" id="waiting-sala"></div>
+  </div>
+
+  <!-- QUESTION -->
+  <div class="screen" id="screen-question">
+    <div class="q-header">
+      <span class="q-num-badge" id="q-badge">Pregunta 1</span>
+      <span class="timer-num" id="timer-num">—</span>
+    </div>
+    <div class="timer-bar"><div class="timer-fill" id="timer-fill"></div></div>
+    <div class="question-text" id="q-text"></div>
+    <div class="options-list" id="options-list"></div>
+    <div class="feedback-bar" id="feedback-bar"></div>
+    <div class="explanation-box" id="explanation-box" style="display:none;"></div>
+  </div>
+
+  <!-- SCORE INTERMEDIO -->
+  <div class="screen" id="screen-score">
+    <div style="font-size:14px; color:var(--text-muted);">Puntuación actual</div>
+    <div class="score-big" id="score-display">0</div>
+    <div class="score-label">puntos</div>
+    <div class="rank-chip" id="rank-display">Esperando siguiente pregunta...</div>
+  </div>
+
+  <!-- FINAL -->
+  <div class="screen" id="screen-final">
+    <div style="font-size:28px; font-weight:700;">¡Quiz finalizado! 🎉</div>
+    <div class="podium-list" id="podium-list"></div>
+    <button class="btn btn-ghost" onclick="location.reload()">↩ Volver al inicio</button>
+  </div>
+
+</main>
+
+<script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
+import { getDatabase, ref, set, onValue, update, get } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-database.js";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyD5Er05AAOlERuFvkQua5Kt2prtugYCN4s",
+  authDomain: "renalhoot-b2235.firebaseapp.com",
+  databaseURL: "https://renalhoot-b2235-default-rtdb.europe-west1.firebasedatabase.app",
+  projectId: "renalhoot-b2235",
+  storageBucket: "renalhoot-b2235.firebasestorage.app",
+  messagingSenderId: "1015810057534",
+  appId: "1:1015810057534:web:0a3987a24ea8479366786f"
+};
+
+const app = initializeApp(firebaseConfig);
+const db = getDatabase(app);
+
+let salaCode = null;
+let myUID = null;
+let myName = null;
+let myPts = 0;
+let currentQIdx = -1;
+let answered = false;
+let timerInterval = null;
+let tiempoInicio = null;
+let tiempoTotal = 30;
+
+// Auto-fill code from URL
+const urlParams = new URLSearchParams(location.search);
+const codeParam = urlParams.get('sala');
+if (codeParam) document.getElementById('input-code').value = codeParam;
+
+function showScreen(id) {
+  document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+}
+
+// ---- JOIN ----
+document.getElementById('btn-join').addEventListener('click', joinSala);
+document.getElementById('input-name').addEventListener('keydown', e => { if (e.key === 'Enter') joinSala(); });
+
+async function joinSala() {
+  const code = document.getElementById('input-code').value.trim();
+  const name = document.getElementById('input-name').value.trim();
+  const errEl = document.getElementById('join-error');
+  errEl.style.display = 'none';
+
+  if (!code || code.length !== 6) { showError('Introduce un código de 6 dígitos'); return; }
+  if (!name) { showError('Introduce tu nombre'); return; }
+
+  const salaSnap = await get(ref(db, `salas/${code}`));
+  if (!salaSnap.exists()) { showError('Sala no encontrada. Revisa el código.'); return; }
+  const sala = salaSnap.val();
+  if (sala.estado === 'finalizado') { showError('Este quiz ya ha finalizado.'); return; }
+
+  salaCode = code;
+  myName = name;
+  myUID = 'player_' + Date.now() + '_' + Math.random().toString(36).substr(2, 5);
+
+  await set(ref(db, `salas/${salaCode}/jugadores/${myUID}`), { nombre: myName, ts: Date.now() });
+
+  document.getElementById('waiting-name').textContent = `👋 Hola, ${myName}`;
+  document.getElementById('waiting-sala').textContent = `Sala: ${salaCode}`;
+  document.getElementById('header-badge').textContent = myName.toUpperCase();
+
+  showScreen('screen-waiting');
+  escucharSala();
+}
+
+function showError(msg) {
+  const el = document.getElementById('join-error');
+  el.textContent = msg;
+  el.style.display = 'block';
+}
+
+// ---- ESCUCHAR SALA ----
+function escucharSala() {
+  onValue(ref(db, `salas/${salaCode}`), snap => {
+    if (!snap.exists()) return;
+    const sala = snap.val();
+
+    if (sala.estado === 'pregunta' && sala.preguntaActual !== currentQIdx) {
+      currentQIdx = sala.preguntaActual;
+      answered = false;
+      tiempoInicio = sala.tiempoInicio;
+      tiempoTotal = sala.tiempo || 30;
+      if (sala.preguntaData) renderPregunta(sala.preguntaData);
+    }
+
+    if (sala.estado === 'revelar') {
+      revelarRespuesta(sala.respuestaCorrecta, sala.preguntaData);
+    }
+
+    if (sala.estado === 'finalizado') {
+      mostrarFinal(sala.scores);
+    }
+  });
+}
+
+function renderPregunta(q) {
+  if (!q || !q.pregunta) return;
+  const letras = ['A','B','C','D'];
+
+  showScreen('screen-question');
+  document.getElementById('q-badge').textContent = `Pregunta ${currentQIdx + 1}`;
+  document.getElementById('q-text').textContent = q.pregunta;
+  document.getElementById('explanation-box').style.display = 'none';
+  document.getElementById('feedback-bar').style.display = 'none';
+
+  const list = document.getElementById('options-list');
+  list.innerHTML = q.opciones.map((op, i) => `
+    <button class="option-btn ${letras[i]}" data-idx="${i}">
+      <span class="option-letter-badge">${letras[i]}</span>
+      ${op}
+    </button>
+  `).join('');
+
+  list.querySelectorAll('.option-btn').forEach(btn => {
+    btn.addEventListener('click', () => responder(parseInt(btn.dataset.idx), q));
+  });
+
+  // Timer
+  clearInterval(timerInterval);
+  const fill = document.getElementById('timer-fill');
+  const numEl = document.getElementById('timer-num');
+  fill.classList.remove('urgent');
+  numEl.classList.remove('urgent');
+
+  function tick() {
+    const elapsed = (Date.now() - tiempoInicio) / 1000;
+    const remaining = Math.max(0, tiempoTotal - elapsed);
+    const pct = (remaining / tiempoTotal) * 100;
+    fill.style.width = pct + '%';
+    numEl.textContent = Math.ceil(remaining);
+    if (remaining <= 5) { fill.classList.add('urgent'); numEl.classList.add('urgent'); }
+    if (remaining <= 0) {
+      clearInterval(timerInterval);
+      if (!answered) {
+        answered = true;
+        disableOptions();
+        showFeedback('no-answer', '⏱ Tiempo agotado — sin respuesta');
+      }
+    }
+  }
+
+  tick();
+  timerInterval = setInterval(tick, 250);
+}
+
+async function responder(idx, q) {
+  if (answered) return;
+  answered = true;
+  clearInterval(timerInterval);
+
+  const tiempoRestante = Math.max(0, tiempoTotal - (Date.now() - tiempoInicio) / 1000);
+
+  await set(ref(db, `salas/${salaCode}/respuestas/${myUID}`), {
+    opcion: idx,
+    preguntaIdx: currentQIdx,
+    tiempo: tiempoRestante,
+    nombre: myName
+  });
+
+  disableOptions();
+  document.querySelectorAll('.option-btn')[idx].classList.add('selected');
+  showFeedback('waiting', '✓ Respuesta enviada — esperando al resto...');
+}
+
+function disableOptions() {
+  document.querySelectorAll('.option-btn').forEach(b => b.disabled = true);
+}
+
+function showFeedback(type, msg) {
+  const el = document.getElementById('feedback-bar');
+  el.className = 'feedback-bar ' + type;
+  el.textContent = msg;
+  el.style.display = 'block';
+}
+
+function revelarRespuesta(correcta, preguntaData) {
+  if (currentQIdx < 0) return;
+  clearInterval(timerInterval);
+  document.getElementById('timer-fill').style.width = '0%';
+
+  const btns = document.querySelectorAll('.option-btn');
+  btns.forEach((btn, i) => {
+    btn.disabled = true;
+    if (i === correcta) btn.classList.add('correct');
+    else if (btn.classList.contains('selected')) btn.classList.add('wrong');
+    else btn.classList.add('wrong');
+  });
+
+  // Feedback
+  const selectedBtn = document.querySelector('.option-btn.selected');
+  const selectedIdx = selectedBtn ? parseInt(selectedBtn.dataset.idx) : -1;
+
+  if (!answered && selectedIdx === -1) {
+    showFeedback('no-answer', '⏱ Sin respuesta');
+  } else if (selectedIdx === correcta) {
+    const tiempoBonus = Math.max(0, Math.floor(((Date.now() - tiempoInicio) > 0 ? tiempoTotal - (Date.now() - tiempoInicio)/1000 : 0) * 10));
+    const pts = 100 + tiempoBonus;
+    myPts += pts;
+    showFeedback('correct', `✅ ¡Correcto! +${pts} puntos`);
+  } else {
+    showFeedback('wrong', `❌ Incorrecto`);
+  }
+
+  // Mostrar explicación si la hay
+  setTimeout(() => {
+    get(ref(db, `salas/${salaCode}/preguntaData`)).then(snap => {
+      if (snap.exists() && snap.val().explicacion) {
+        const box = document.getElementById('explanation-box');
+        box.innerHTML = `<strong>💡</strong> ${snap.val().explicacion}`;
+        box.style.display = 'block';
+      }
+    });
+
+    // Pasar a pantalla de score intermedio
+    setTimeout(() => {
+      document.getElementById('score-display').textContent = myPts;
+      showScreen('screen-score');
+    }, 3000);
+  }, 500);
+}
+
+function mostrarFinal(scores) {
+  if (!scores) { showScreen('screen-final'); return; }
+  const sorted = Object.entries(scores).sort((a,b) => b[1].pts - a[1].pts);
+  const rankSymbols = ['🥇','🥈','🥉'];
+  document.getElementById('podium-list').innerHTML = sorted.map(([uid, v], i) => `
+    <div class="podium-item ${uid === myUID ? 'is-me' : ''}">
+      <span class="podium-rank">${rankSymbols[i] || (i+1)}</span>
+      <span class="podium-name">${v.nombre}${uid === myUID ? ' (tú)' : ''}</span>
+      <span class="podium-pts">${v.pts} pts</span>
+    </div>
+  `).join('');
+  showScreen('screen-final');
+}
+</script>
+
+
+</body>
+</html>
