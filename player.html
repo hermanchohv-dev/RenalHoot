@@ -205,7 +205,7 @@
 
   .timer-num {
     font-family: 'JetBrains Mono', monospace;
-    font-size: 24px;
+    font-size: 48px;
     font-weight: 700;
     color: var(--accent3);
   }
@@ -525,12 +525,11 @@ function escucharSala() {
 
 function playReloj(duracion) {
   const audio = document.getElementById('reloj-audio');
-  audio.currentTime = 0;
+  const audioDuration = 32.993;
+  // Start offset so audio ends exactly when timer ends
+  const offset = Math.max(0, audioDuration - duracion);
+  audio.currentTime = offset;
   audio.play().catch(() => {});
-  setTimeout(() => {
-    audio.pause();
-    audio.currentTime = 0;
-  }, duracion * 1000);
 }
 
 function stopReloj() {
