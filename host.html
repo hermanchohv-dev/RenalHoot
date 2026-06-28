@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>RenalHoot — Profesor</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap');
 
@@ -140,6 +141,14 @@
   .stat .lbl { font-size: 12px; color: var(--text-muted); margin-top: 2px; }
 
   /* SALA CODE */
+  .qr-wrap {
+    background: #fff;
+    border-radius: 10px;
+    padding: 10px;
+    display: inline-block;
+    display: none;
+  }
+
   .sala-display {
     display: flex;
     align-items: center;
@@ -428,6 +437,12 @@
           <div class="codigo" id="sala-code">—</div>
           <div class="sala-url" id="sala-url">Inicia una sala para obtener el código</div>
         </div>
+        <div style="display:flex; flex-direction:column; align-items:center; gap:8px;">
+          <div class="qr-wrap" id="qr-wrap">
+            <div id="qr-code"></div>
+          </div>
+          <div style="font-size:11px; color:var(--text-muted); text-align:center;" id="qr-label" style="display:none;">Escanea para unirte</div>
+        </div>
         <div style="flex:1">
           <div id="player-count">0 participantes conectados</div>
           <div id="players-list"><div class="empty-state">Esperando participantes...</div></div>
@@ -578,6 +593,21 @@ async function crearSala() {
   document.getElementById('sala-url').textContent = playerUrl;
   document.getElementById('btn-crear-sala').disabled = true;
   document.getElementById('btn-iniciar').disabled = false;
+
+  // Generar QR
+  const qrWrap = document.getElementById('qr-wrap');
+  const qrLabel = document.getElementById('qr-label');
+  qrWrap.style.display = 'inline-block';
+  qrLabel.style.display = 'block';
+  document.getElementById('qr-code').innerHTML = '';
+  new QRCode(document.getElementById('qr-code'), {
+    text: playerUrl,
+    width: 160,
+    height: 160,
+    colorDark: '#000000',
+    colorLight: '#ffffff',
+    correctLevel: QRCode.CorrectLevel.M
+  });
 
   // Escuchar jugadores
   onValue(ref(db, `salas/${salaCode}/jugadores`), snap => {
