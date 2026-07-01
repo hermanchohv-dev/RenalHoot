@@ -542,6 +542,21 @@ function escucharSala() {
 
 
 
+
+function getOptionText(op) {
+  if (typeof op === 'string') return op;
+  if (op && typeof op === 'object') return op.texto || op.text || op.label || op.titulo || '';
+  return '';
+}
+
+function getOptionImage(q, op, i) {
+  if (op && typeof op === 'object' && (op.imagen || op.image || op.img || op.src)) return op.imagen || op.image || op.img || op.src;
+  if (q.imagenes_opciones && q.imagenes_opciones[i]) return q.imagenes_opciones[i];
+  if (q.optionImages && q.optionImages[i]) return q.optionImages[i];
+  if (q.opciones_con_imagen && q.opciones_con_imagen[i] && q.opciones_con_imagen[i].imagen) return q.opciones_con_imagen[i].imagen;
+  return '';
+}
+
 function renderPregunta(q) {
   if (!q || !q.pregunta) return;
   const letras = ['A','B','C','D'];
@@ -554,13 +569,15 @@ function renderPregunta(q) {
 
   const list = document.getElementById('options-list');
   list.innerHTML = q.opciones.map((op, i) => {
-    const img = q.imagenes_opciones && q.imagenes_opciones[i] ? `<img class="option-img" src="${q.imagenes_opciones[i]}" alt="Opción ${letras[i]}">` : '';
+    const optionText = getOptionText(op);
+    const imageSrc = getOptionImage(q, op, i);
+    const img = imageSrc ? `<img class="option-img" src="${imageSrc}" alt="Opción ${letras[i]}">` : '';
     return `
       <button class="option-btn ${letras[i]}" data-idx="${i}">
         <span class="option-letter-badge">${letras[i]}</span>
         <span class="option-content">
           ${img}
-          <span class="option-text">${op}</span>
+          <span class="option-text">${optionText}</span>
         </span>
       </button>
     `;

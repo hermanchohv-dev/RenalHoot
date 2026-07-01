@@ -728,6 +728,21 @@ function stopReloj() {
   audio.currentTime = 0;
 }
 
+
+function getOptionText(op) {
+  if (typeof op === 'string') return op;
+  if (op && typeof op === 'object') return op.texto || op.text || op.label || op.titulo || '';
+  return '';
+}
+
+function getOptionImage(q, op, i) {
+  if (op && typeof op === 'object' && (op.imagen || op.image || op.img || op.src)) return op.imagen || op.image || op.img || op.src;
+  if (q.imagenes_opciones && q.imagenes_opciones[i]) return q.imagenes_opciones[i];
+  if (q.optionImages && q.optionImages[i]) return q.optionImages[i];
+  if (q.opciones_con_imagen && q.opciones_con_imagen[i] && q.opciones_con_imagen[i].imagen) return q.opciones_con_imagen[i].imagen;
+  return '';
+}
+
 // ---- Mostrar pregunta ----
 async function mostrarPregunta(idx) {
   currentQ = idx;
@@ -748,13 +763,15 @@ async function mostrarPregunta(idx) {
   // opciones
   const grid = document.getElementById('options-grid');
   grid.innerHTML = q.opciones.map((op, i) => {
-    const img = q.imagenes_opciones && q.imagenes_opciones[i] ? `<img class="option-img" src="${q.imagenes_opciones[i]}" alt="Opción ${letras[i]}">` : '';
+    const optionText = getOptionText(op);
+    const imageSrc = getOptionImage(q, op, i);
+    const img = imageSrc ? `<img class="option-img" src="${imageSrc}" alt="Opción ${letras[i]}">` : '';
     return `
       <div class="option-card ${letras[i]}">
         <span class="option-letter">${letras[i]}</span>
         <div class="option-content">
           ${img}
-          <span class="option-text">${op}</span>
+          <span class="option-text">${optionText}</span>
         </div>
       </div>
     `;
@@ -776,8 +793,9 @@ async function mostrarPregunta(idx) {
     preguntaData: {
       idx: idx,
       pregunta: q.pregunta,
-      opciones: q.opciones,
-      imagenes_opciones: q.imagenes_opciones || null,
+      opciones: q.opciones.map(op => getOptionText(op)),
+      imagenes_opciones: q.opciones.map((op, i) => getOptionImage(q, op, i)),
+      optionImages: q.opciones.map((op, i) => getOptionImage(q, op, i)),
       tiempo: QUESTION_TIME_SECONDS,
       explicacion: q.explicacion || ''
     }
