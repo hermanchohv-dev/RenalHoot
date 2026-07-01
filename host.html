@@ -10,23 +10,29 @@
   @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap');
 
   :root {
-    --bg: #0d1117;
-    --surface: #161b22;
-    --surface2: #1f2937;
-    --border: #30363d;
-    --accent: #00c8a0;
-    --accent2: #ff6b6b;
-    --accent3: #ffd166;
-    --text: #e6edf3;
-    --text-muted: #7d8590;
-    --radius: 12px;
+    --bg: #12002b;
+    --surface: rgba(25, 18, 65, 0.92);
+    --surface2: rgba(38, 32, 92, 0.95);
+    --border: rgba(255,255,255,0.16);
+    --accent: #00f5c4;
+    --accent2: #ff4d8d;
+    --accent3: #ffe066;
+    --accent4: #45b7ff;
+    --accent5: #9b5cff;
+    --text: #f8fbff;
+    --text-muted: #b8c2d8;
+    --radius: 16px;
   }
 
   * { box-sizing: border-box; margin: 0; padding: 0; }
 
   body {
     font-family: 'Space Grotesk', sans-serif;
-    background: var(--bg);
+    background:
+      radial-gradient(circle at 12% 15%, rgba(0,245,196,0.22), transparent 28%),
+      radial-gradient(circle at 85% 8%, rgba(255,77,141,0.22), transparent 30%),
+      radial-gradient(circle at 55% 90%, rgba(155,92,255,0.28), transparent 35%),
+      linear-gradient(135deg, #12002b 0%, #0b1738 48%, #1b003f 100%);
     color: var(--text);
     min-height: 100vh;
   }
@@ -37,7 +43,7 @@
     justify-content: space-between;
     padding: 16px 32px;
     border-bottom: 1px solid var(--border);
-    background: var(--surface);
+    background: linear-gradient(135deg, rgba(25,18,65,0.96), rgba(14,38,76,0.92));
   }
 
   .logo {
@@ -45,6 +51,7 @@
     font-weight: 700;
     color: var(--accent);
     letter-spacing: -0.5px;
+    text-shadow: 0 0 18px rgba(0,245,196,0.35);
   }
 
   .logo span { color: var(--text); }
@@ -67,9 +74,10 @@
   #results-panel { display: none; }
 
   .card {
-    background: var(--surface);
+    background: linear-gradient(145deg, rgba(25,18,65,0.93), rgba(31,41,96,0.88));
     border: 1px solid var(--border);
     border-radius: var(--radius);
+    box-shadow: 0 16px 42px rgba(0,0,0,0.24);
     padding: 28px;
     margin-bottom: 20px;
   }
@@ -145,9 +153,10 @@
   .qr-wrap {
     background: #fff;
     border-radius: 10px;
-    padding: 10px;
+    padding: 18px;
     display: inline-block;
     display: none;
+    box-shadow: 0 0 0 8px rgba(0,245,196,0.18), 0 18px 50px rgba(0,0,0,0.35);
   }
 
   .sala-display {
@@ -401,6 +410,17 @@
     color: var(--text-muted);
     margin-bottom: 8px;
   }
+  .score-item.winner {
+    border: 2px solid var(--accent3);
+    background: linear-gradient(135deg, rgba(255,224,102,0.24), rgba(0,245,196,0.18));
+    box-shadow: 0 0 30px rgba(255,224,102,0.25);
+    transform: scale(1.02);
+  }
+
+  .btn-primary { background: linear-gradient(135deg, var(--accent), var(--accent4)); color: #07111f; }
+  .btn-danger { background: linear-gradient(135deg, var(--accent2), #ff9f1c); color: #07111f; }
+  .btn-ghost { background: linear-gradient(135deg, rgba(155,92,255,0.28), rgba(69,183,255,0.18)); }
+
 </style>
 </head>
 <body>
@@ -468,7 +488,7 @@
     <div class="card">
       <div class="question-header">
         <span class="q-num" id="q-num">Pregunta 1 / 10</span>
-        <div class="timer-display" id="timer-display">30</div>
+        <div class="timer-display" id="timer-display">32</div>
       </div>
       <div class="question-text" id="question-text"></div>
       <div class="options-grid" id="options-grid"></div>
@@ -572,7 +592,7 @@ function handleFile(file) {
 function showPreview() {
   document.getElementById('preview-title').textContent = quizData.titulo || 'Sin título';
   document.getElementById('preview-count').textContent = quizData.preguntas.length;
-  document.getElementById('preview-time').textContent = quizData.preguntas[0].tiempo || 30;
+  document.getElementById('preview-time').textContent = 32;
   document.getElementById('quiz-preview').style.display = 'block';
   document.getElementById('btn-crear-sala').disabled = false;
 }
@@ -605,8 +625,8 @@ async function crearSala() {
   document.getElementById('qr-code').innerHTML = '';
   new QRCode(document.getElementById('qr-code'), {
     text: playerUrl,
-    width: 160,
-    height: 160,
+    width: 320,
+    height: 320,
     colorDark: '#000000',
     colorLight: '#ffffff',
     correctLevel: QRCode.CorrectLevel.M
@@ -694,13 +714,13 @@ async function mostrarPregunta(idx) {
     estado: 'pregunta',
     preguntaActual: idx,
     tiempoInicio: Date.now(),
-    tiempo: q.tiempo || 32,
+    tiempo: 32,
     respuestas: null,
     preguntaData: {
       idx: idx,
       pregunta: q.pregunta,
       opciones: q.opciones,
-      tiempo: q.tiempo || 32,
+      tiempo: 32,
       explicacion: q.explicacion || ''
     }
   });
@@ -725,7 +745,7 @@ async function mostrarPregunta(idx) {
   });
 
   // Timer
-  timerLeft = q.tiempo || 32;
+  timerLeft = 32;
   const timerEl = document.getElementById('timer-display');
   timerEl.classList.remove('urgent');
   timerEl.textContent = timerLeft;
@@ -846,17 +866,19 @@ async function finalizarQuiz() {
 
   document.getElementById('game-panel').style.display = 'none';
   document.getElementById('results-panel').style.display = 'block';
-  // Confetti celebration
+  // Confetti celebration: lluvia central + cañones laterales al mostrar el ganador
+  const confettiColors = ['#00f5c4','#ffe066','#ff4d8d','#45b7ff','#9b5cff','#ffffff'];
   setTimeout(() => {
-    confetti({ particleCount: 200, spread: 90, origin: { y: 0.5 }, colors: ['#00c8a0','#ffd166','#ff6b6b','#45b7d1','#ffffff'] });
-    setTimeout(() => confetti({ particleCount: 150, spread: 120, origin: { y: 0.4 }, angle: 60, colors: ['#00c8a0','#ffd166','#ff6b6b'] }), 400);
-    setTimeout(() => confetti({ particleCount: 150, spread: 120, origin: { y: 0.4 }, angle: 120, colors: ['#00c8a0','#ffd166','#ff6b6b'] }), 800);
-  }, 300);
+    confetti({ particleCount: 260, spread: 105, startVelocity: 42, origin: { y: 0.55 }, colors: confettiColors });
+    setTimeout(() => confetti({ particleCount: 180, spread: 130, startVelocity: 55, origin: { x: 0.05, y: 0.75 }, angle: 60, colors: confettiColors }), 350);
+    setTimeout(() => confetti({ particleCount: 180, spread: 130, startVelocity: 55, origin: { x: 0.95, y: 0.75 }, angle: 120, colors: confettiColors }), 700);
+    setTimeout(() => confetti({ particleCount: 140, spread: 360, ticks: 90, origin: { x: 0.5, y: 0.35 }, colors: confettiColors }), 1150);
+  }, 250);
 
   const sorted = Object.entries(scores).sort((a,b) => b[1].pts - a[1].pts);
   const rankSymbols = ['🥇','🥈','🥉'];
   document.getElementById('final-scores').innerHTML = sorted.map(([,v], i) => `
-    <li class="score-item">
+    <li class="score-item ${i===0?'winner':''}">
       <span class="rank ${i===0?'gold':i===1?'silver':i===2?'bronze':''}">${rankSymbols[i] || (i+1)}</span>
       <span class="score-name">${v.nombre}</span>
       <span class="score-pts">${v.pts} pts</span>

@@ -4,27 +4,34 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>RenalHoot — Participante</title>
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap');
 
   :root {
-    --bg: #0d1117;
-    --surface: #161b22;
-    --surface2: #1f2937;
-    --border: #30363d;
-    --accent: #00c8a0;
-    --accent2: #ff6b6b;
-    --accent3: #ffd166;
-    --text: #e6edf3;
-    --text-muted: #7d8590;
-    --radius: 12px;
+    --bg: #12002b;
+    --surface: rgba(25, 18, 65, 0.92);
+    --surface2: rgba(38, 32, 92, 0.95);
+    --border: rgba(255,255,255,0.16);
+    --accent: #00f5c4;
+    --accent2: #ff4d8d;
+    --accent3: #ffe066;
+    --accent4: #45b7ff;
+    --accent5: #9b5cff;
+    --text: #f8fbff;
+    --text-muted: #b8c2d8;
+    --radius: 16px;
   }
 
   * { box-sizing: border-box; margin: 0; padding: 0; }
 
   body {
     font-family: 'Space Grotesk', sans-serif;
-    background: var(--bg);
+    background:
+      radial-gradient(circle at 12% 15%, rgba(0,245,196,0.22), transparent 28%),
+      radial-gradient(circle at 85% 8%, rgba(255,77,141,0.22), transparent 30%),
+      radial-gradient(circle at 55% 90%, rgba(155,92,255,0.28), transparent 35%),
+      linear-gradient(135deg, #12002b 0%, #0b1738 48%, #1b003f 100%);
     color: var(--text);
     min-height: 100vh;
     display: flex;
@@ -37,7 +44,7 @@
     justify-content: space-between;
     padding: 16px 24px;
     border-bottom: 1px solid var(--border);
-    background: var(--surface);
+    background: linear-gradient(135deg, rgba(25,18,65,0.96), rgba(14,38,76,0.92));
   }
 
   .logo { font-size: 20px; font-weight: 700; color: var(--accent); }
@@ -133,8 +140,8 @@
   .btn:hover { opacity: 0.85; }
   .btn:active { transform: scale(0.98); }
   .btn:disabled { opacity: 0.4; cursor: not-allowed; }
-  .btn-primary { background: var(--accent); color: #0d1117; }
-  .btn-ghost { background: var(--surface2); color: var(--text); border: 1px solid var(--border); }
+  .btn-primary { background: linear-gradient(135deg, var(--accent), var(--accent4)); color: #07111f; }
+  .btn-ghost { background: linear-gradient(135deg, rgba(155,92,255,0.28), rgba(69,183,255,0.18)); color: var(--text); border: 1px solid var(--border); }
 
   /* WAITING */
   #screen-waiting {
@@ -358,6 +365,14 @@
     font-size: 13px;
     text-align: center;
   }
+
+  .podium-item:first-child {
+    border: 2px solid var(--accent3);
+    background: linear-gradient(135deg, rgba(255,224,102,0.22), rgba(0,245,196,0.14));
+    box-shadow: 0 0 28px rgba(255,224,102,0.22);
+  }
+
+  .join-logo, .logo { text-shadow: 0 0 18px rgba(0,245,196,0.35); }
 </style>
 </head>
 <body>
@@ -445,7 +460,7 @@ let currentQIdx = -1;
 let answered = false;
 let timerInterval = null;
 let tiempoInicio = null;
-let tiempoTotal = 30;
+let tiempoTotal = 32;
 
 // Auto-fill code from URL
 const urlParams = new URLSearchParams(location.search);
@@ -505,7 +520,7 @@ function escucharSala() {
       currentQIdx = sala.preguntaActual;
       answered = false;
       tiempoInicio = sala.tiempoInicio;
-      tiempoTotal = sala.tiempo || 32;
+      tiempoTotal = 32;
       if (sala.preguntaData) renderPregunta(sala.preguntaData);
     }
 
@@ -648,6 +663,14 @@ function revelarRespuesta(correcta, preguntaData) {
   }, 500);
 }
 
+function lanzarConfetiFinal() {
+  if (typeof confetti !== 'function') return;
+  const confettiColors = ['#00f5c4','#ffe066','#ff4d8d','#45b7ff','#9b5cff','#ffffff'];
+  confetti({ particleCount: 180, spread: 100, startVelocity: 38, origin: { y: 0.55 }, colors: confettiColors });
+  setTimeout(() => confetti({ particleCount: 120, spread: 120, startVelocity: 50, origin: { x: 0.05, y: 0.75 }, angle: 60, colors: confettiColors }), 300);
+  setTimeout(() => confetti({ particleCount: 120, spread: 120, startVelocity: 50, origin: { x: 0.95, y: 0.75 }, angle: 120, colors: confettiColors }), 600);
+}
+
 function mostrarFinal(scores) {
   if (!scores) { showScreen('screen-final'); return; }
   const sorted = Object.entries(scores).sort((a,b) => b[1].pts - a[1].pts);
@@ -660,6 +683,7 @@ function mostrarFinal(scores) {
     </div>
   `).join('');
   showScreen('screen-final');
+  lanzarConfetiFinal();
 }
 </script>
 
