@@ -451,6 +451,7 @@ const firebaseConfig = {
 
 const app = initializeApp(firebaseConfig);
 const db = getDatabase(app);
+const QUESTION_TIME_SECONDS = 32;
 
 let salaCode = null;
 let myUID = null;
@@ -460,7 +461,7 @@ let currentQIdx = -1;
 let answered = false;
 let timerInterval = null;
 let tiempoInicio = null;
-let tiempoTotal = 32;
+let tiempoTotal = QUESTION_TIME_SECONDS;
 
 // Auto-fill code from URL
 const urlParams = new URLSearchParams(location.search);
@@ -520,7 +521,7 @@ function escucharSala() {
       currentQIdx = sala.preguntaActual;
       answered = false;
       tiempoInicio = sala.tiempoInicio;
-      tiempoTotal = 32;
+      tiempoTotal = Number(sala?.preguntaData?.tiempo || sala?.tiempo || QUESTION_TIME_SECONDS);
       if (sala.preguntaData) renderPregunta(sala.preguntaData);
     }
 

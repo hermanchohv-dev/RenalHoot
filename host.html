@@ -152,12 +152,48 @@
   /* SALA CODE */
   .qr-wrap {
     background: #fff;
-    border-radius: 10px;
+    border-radius: 14px;
     padding: 18px;
     display: inline-block;
     display: none;
     box-shadow: 0 0 0 8px rgba(0,245,196,0.18), 0 18px 50px rgba(0,0,0,0.35);
+    position: relative;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
   }
+
+  .qr-wrap.qr-large {
+    transform: scale(1.65);
+    transform-origin: top right;
+    z-index: 20;
+    box-shadow: 0 0 0 10px rgba(255,224,102,0.22), 0 28px 80px rgba(0,0,0,0.55);
+  }
+
+  #qr-code canvas, #qr-code img {
+    width: 320px !important;
+    height: 320px !important;
+    display: block;
+  }
+
+  .qr-zoom-btn {
+    position: absolute;
+    top: 6px;
+    right: 6px;
+    width: 34px;
+    height: 34px;
+    border: none;
+    border-radius: 10px;
+    background: rgba(13,17,23,0.88);
+    color: #fff;
+    font-size: 18px;
+    font-weight: 700;
+    cursor: pointer;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.35);
+  }
+
+  .qr-wrap:hover .qr-zoom-btn, .qr-zoom-btn.visible { display: flex; }
 
   .sala-display {
     display: flex;
@@ -461,7 +497,8 @@
           <div class="sala-url" id="sala-url">Inicia una sala para obtener el código</div>
         </div>
         <div style="display:flex; flex-direction:column; align-items:center; gap:8px;">
-          <div class="qr-wrap" id="qr-wrap">
+          <div class="qr-wrap" id="qr-wrap" title="Toca el icono para ampliar o reducir el QR">
+            <button type="button" class="qr-zoom-btn" id="qr-zoom-btn" aria-label="Ampliar QR">⛶</button>
             <div id="qr-code"></div>
           </div>
           <div style="font-size:11px; color:var(--text-muted); text-align:center;" id="qr-label" style="display:none;">Escanea para unirte</div>
@@ -547,6 +584,7 @@ const firebaseConfig = {
 
 const app = initializeApp(firebaseConfig);
 const db = getDatabase(app);
+const QUESTION_TIME_SECONDS = 32;
 
 let quizData = null;
 let salaCode = null;
@@ -632,6 +670,15 @@ async function crearSala() {
     correctLevel: QRCode.CorrectLevel.M
   });
 
+  const qrZoomBtn = document.getElementById('qr-zoom-btn');
+  qrZoomBtn.classList.add('visible');
+  qrZoomBtn.onclick = () => {
+    qrWrap.classList.toggle('qr-large');
+    const expanded = qrWrap.classList.contains('qr-large');
+    qrZoomBtn.textContent = expanded ? '↙' : '⛶';
+    qrZoomBtn.setAttribute('aria-label', expanded ? 'Reducir QR' : 'Ampliar QR');
+  };
+
   // Escuchar jugadores
   onValue(ref(db, `salas/${salaCode}/jugadores`), snap => {
     const jugadores = snap.val() || {};
@@ -714,13 +761,13 @@ async function mostrarPregunta(idx) {
     estado: 'pregunta',
     preguntaActual: idx,
     tiempoInicio: Date.now(),
-    tiempo: 32,
+    tiempo: QUESTION_TIME_SECONDS,
     respuestas: null,
     preguntaData: {
       idx: idx,
       pregunta: q.pregunta,
       opciones: q.opciones,
-      tiempo: 32,
+      tiempo: QUESTION_TIME_SECONDS,
       explicacion: q.explicacion || ''
     }
   });
@@ -745,7 +792,7 @@ async function mostrarPregunta(idx) {
   });
 
   // Timer
-  timerLeft = 32;
+  timerLeft = QUESTION_TIME_SECONDS;
   const timerEl = document.getElementById('timer-display');
   timerEl.classList.remove('urgent');
   timerEl.textContent = timerLeft;
