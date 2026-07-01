@@ -277,6 +277,10 @@
     background: rgba(255,255,255,0.1);
     border-radius: 6px;
   }
+  .option-content { display: flex; align-items: center; gap: 14px; width: 100%; }
+  .option-img { width: 92px; height: 92px; object-fit: cover; border-radius: 12px; border: 2px solid rgba(255,255,255,0.25); flex-shrink: 0; box-shadow: 0 8px 20px rgba(0,0,0,0.25); }
+  .option-text { flex: 1; }
+
 
   /* FEEDBACK */
   .feedback-bar {
@@ -549,12 +553,18 @@ function renderPregunta(q) {
   document.getElementById('feedback-bar').style.display = 'none';
 
   const list = document.getElementById('options-list');
-  list.innerHTML = q.opciones.map((op, i) => `
-    <button class="option-btn ${letras[i]}" data-idx="${i}">
-      <span class="option-letter-badge">${letras[i]}</span>
-      ${op}
-    </button>
-  `).join('');
+  list.innerHTML = q.opciones.map((op, i) => {
+    const img = q.imagenes_opciones && q.imagenes_opciones[i] ? `<img class="option-img" src="${q.imagenes_opciones[i]}" alt="Opción ${letras[i]}">` : '';
+    return `
+      <button class="option-btn ${letras[i]}" data-idx="${i}">
+        <span class="option-letter-badge">${letras[i]}</span>
+        <span class="option-content">
+          ${img}
+          <span class="option-text">${op}</span>
+        </span>
+      </button>
+    `;
+  }).join('');
 
   list.querySelectorAll('.option-btn').forEach(btn => {
     btn.addEventListener('click', () => responder(parseInt(btn.dataset.idx), q));

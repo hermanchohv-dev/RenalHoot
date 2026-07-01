@@ -320,6 +320,10 @@
     display: block;
     margin-bottom: 6px;
   }
+  .option-content { display: flex; align-items: center; gap: 16px; }
+  .option-img { width: 110px; height: 110px; object-fit: cover; border-radius: 12px; border: 2px solid rgba(255,255,255,0.25); flex-shrink: 0; box-shadow: 0 8px 20px rgba(0,0,0,0.25); }
+  .option-text { flex: 1; }
+
 
   /* RESPUESTAS EN VIVO */
   .live-answers {
@@ -743,12 +747,18 @@ async function mostrarPregunta(idx) {
 
   // opciones
   const grid = document.getElementById('options-grid');
-  grid.innerHTML = q.opciones.map((op, i) => `
-    <div class="option-card ${letras[i]}">
-      <span class="option-letter">${letras[i]}</span>
-      ${op}
-    </div>
-  `).join('');
+  grid.innerHTML = q.opciones.map((op, i) => {
+    const img = q.imagenes_opciones && q.imagenes_opciones[i] ? `<img class="option-img" src="${q.imagenes_opciones[i]}" alt="Opción ${letras[i]}">` : '';
+    return `
+      <div class="option-card ${letras[i]}">
+        <span class="option-letter">${letras[i]}</span>
+        <div class="option-content">
+          ${img}
+          <span class="option-text">${op}</span>
+        </div>
+      </div>
+    `;
+  }).join('');
 
   // reset bars
   ['A','B','C','D'].forEach(l => {
@@ -767,6 +777,7 @@ async function mostrarPregunta(idx) {
       idx: idx,
       pregunta: q.pregunta,
       opciones: q.opciones,
+      imagenes_opciones: q.imagenes_opciones || null,
       tiempo: QUESTION_TIME_SECONDS,
       explicacion: q.explicacion || ''
     }
