@@ -1,0 +1,55 @@
+GEMINI WING · CHROMATIC v2
+15 de octubre de 2026
+
+ENTREGA PRINCIPAL: geminib.zip
+
+Es un conjunto de ROM de arcade modificado, ejecutable en MAME. Conserva exactamente
+las rutas, nombres, extensiones y tamaños de las entradas de tu ZIP original:
+17 archivos .rom y el archivo G-2.6d. No hay archivos HTML renombrados como ROM.
+
+CAMBIOS
+- Ajuste de 1.195 entradas de color, dentro de tablas xBRG444 de cuatro bits por canal.
+- Naves y enemigos: medios tonos más vivos y mayor saturación.
+- Fondos: sombras más definidas y blancos ligeramente fríos, para separar planos.
+- Transparencias negras preservadas. Texto, sprites, mapas y lógica sin redibujar.
+- Sólo cambia geminib/gw05-6s.rom: 1.613 bytes, tamaño final 65.536 bytes.
+- Las otras 17 ROM son idénticas a las aportadas.
+
+SONIDOS Y MÚSICA
+Se conserva el audio del arcade en sus ROM originales. El emulador lo genera
+al ejecutar el juego: música, disparos y efectos. No son los pitidos sintéticos
+de la adaptación HTML anterior. No necesitas descargar ni cargar música aparte.
+La muestra MP3 adjunta es sólo una demostración, no una dependencia del juego.
+
+CÓMO JUGAR
+1. Conserva una copia de tu geminib.zip original en otra carpeta.
+2. Coloca el nuevo geminib.zip en el directorio de ROM de MAME, con ese nombre.
+3. Arranca el conjunto geminib. Por ejemplo:
+
+   mame geminib -rompath /ruta/a/tus/roms -skip_gameinfo
+
+Controles predeterminados de MAME: 5 inserta moneda, 1 inicia, flechas mueven,
+Ctrl y Alt son los dos botones. Tab abre la configuración de controles.
+La configuración local de tu emulador puede cambiar esas asignaciones.
+
+ADVERTENCIA DE CHECKSUM
+MAME muestra WRONG CHECKSUMS para gw05-6s.rom porque ha sido modificada
+intencionadamente. No coincide con el volcado histórico que MAME tiene catalogado.
+La prueba se hizo manteniendo esa advertencia visible en el registro; MAME 0.276
+arrancó y ejecutó el juego. Un verificador de ROM dará error para ese archivo.
+Los gestores que exijan coincidencia exacta con su catálogo pueden rechazarlo.
+
+VALIDACIÓN Y LÍMITES
+- MAME 0.276 de Debian, original verificado antes de modificar.
+- Arranque, moneda, inicio, disparos, juego y game over observados por script Lua.
+- Capturas comparables a los mismos fotogramas; 50.972 de 57.344 píxeles cambian
+  en la captura de juego a los 1.800 callbacks del script.
+- Audio PCM de ambas ejecuciones idéntico, estéreo a 48 kHz, sin señal nula.
+- Nombres, extensiones, tamaños y contenido intacto de las demás ROM comprobados.
+- No se probaron todas las fases, otros emuladores ni una placa física.
+- Conserva la resolución y los límites de color del hardware original. Es un
+  retoque de paleta, no una conversión a gráficos HD.
+
+REA se utilizó para inventariar los paquetes; la emulación y las capturas de MAME
+aportan la evidencia de ejecución y audio. Consulta ANALISIS-v2.md y los JSON
+adjuntos para los detalles y hashes.
