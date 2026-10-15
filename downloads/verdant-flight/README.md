@@ -31,3 +31,12 @@ cuatro habilidades adaptadas; no reproduce los efectos vectoriales ni todos los
 detalles de la versión web. Probada en MAME 0.276. La progresión hasta la victoria
 se verificó con estados controlados y protección desde un script externo de pruebas,
 no superando una partida manual completa. El script no forma parte de la ROM.
+
+## Nombre y capturas JPG
+
+El nombre de esta edición se mantiene como **Verdant Flight**, visible en su pantalla de título. `geminib` es únicamente el identificador técnico del controlador de MAME y del archivo ZIP necesario para cargarla.
+
+- [Pantalla de título en JPG](Verdant-Flight-titulo.jpg).
+- [Partida en JPG](Verdant-Flight-partida.jpg).
+
+Son capturas reales de MAME, ampliadas cuatro veces sin filtrado para facilitar su lectura.
