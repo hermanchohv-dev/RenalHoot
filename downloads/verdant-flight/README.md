@@ -1,3 +1,5 @@
+[Proyecto completo 1.1: fuentes, compilación, ROMs y pruebas](PROYECTO-COMPLETO.md)
+
 # Verdant Flight · Native Arcade Edition
 
 
