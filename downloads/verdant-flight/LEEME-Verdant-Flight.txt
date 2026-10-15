@@ -1,0 +1,70 @@
+VERDANT FLIGHT · NATIVE ARCADE EDITION
+Adaptación para MAME, 15 de octubre de 2026
+
+QUÉ ES
+Es una ROM nativa nueva: programa principal Z80 y gráficos propios, inspirados
+en Verdant Flight. Funciona en el hardware Tecmo emulado por el controlador geminib.
+No es el HTML renombrado ni la modificación de paleta del Gemini Wing anterior.
+
+La adaptación tiene tres paletas ambientales, nave animada, enemigos orgánicos,
+disparo doble, cadena de orbes, cuatro habilidades, tres jefes, vidas, puntuación,
+victoria y reinicio. La música y los efectos utilizan las ROM y el driver de sonido
+aportados con Gemini Wing: síntesis FM YM3812, música del arcade y efectos de
+sus disparos, recogidas y explosiones. No se necesita MP3 externo para jugar.
+
+CARGAR EN MAME
+1. Guarda este geminib.zip en una carpeta propia, por ejemplo roms/verdant-flight.
+   Mantén el nombre geminib.zip. No sobrescribas el original ni Chromatic v2.
+2. Ejecuta MAME con esa carpeta como ruta de ROM:
+
+   mame geminib -rompath "roms/verdant-flight" -skip_gameinfo
+
+En Windows puedes utilizar mame.exe en el mismo comando.
+
+IMPORTANTE: MAME lo lista como "Gemini Wing (bootleg)" porque se utiliza ese
+controlador existente. Al arrancar aparece la pantalla VERDANT FLIGHT y su juego
+nuevo. No requiere compilar MAME ni instalar una extensión del emulador.
+
+MAME avisará de WRONG CHECKSUMS para el programa y los gráficos modificados.
+Es intencionado. La ejecución se comprobó sin cambiar los hashes esperados ni
+desactivar la verificación del emulador. Los frontends que sólo acepten volcados
+idénticos a su catálogo pueden rechazar este homebrew; utiliza MAME directamente.
+
+CONTROLES (predeterminados de MAME)
+1: iniciar o volver a jugar. Entrada gratuita; no necesitas moneda.
+Flechas: mover la nave.
+Ctrl izquierdo / botón 1: disparar (mantener).
+Alt izquierdo / botón 2: usar el primer orbe de la cadena.
+P: pausa de MAME. Tab: configurar controles. Escape: salir de MAME.
+Si tienes otras asignaciones locales, utiliza tus botones 1 y 2 configurados.
+
+ORBES
+Cian: abanico de cinco proyectiles potentes.
+Ámbar: nova que elimina enemigos y balas y daña al jefe.
+Violeta: disparo doble reforzado temporal (adaptación de la lanza de la versión web).
+Verde: escudo temporal.
+Cada jefe concede una vida, hasta cinco. Superar los tres completa la partida.
+
+DIFERENCIAS RESPECTO A LA VERSIÓN WEB
+Se adapta a 224 x 256 píxeles y a los límites de sprites y color del arcade.
+El arte se ha recreado en píxeles: no contiene los efectos vectoriales, transparencias
+modernas, iluminación, controles táctiles ni registro persistente de la versión HTML.
+Es una adaptación de un jugador, con balance y patrones nuevos para ese hardware.
+La música proviene del arcade original; no es una composición nueva que lo imite.
+
+VERIFICACIÓN
+Probado con MAME 0.276 (Debian): arranque, inicio, controles, disparos, consumo de
+orbes, colisiones, vidas y game over; progresión controlada por las tres fases,
+tres jefes y victoria. El script de progresión fuerza invulnerabilidad en RAM para
+separar esa prueba de la habilidad de esquivar; esa función NO está en la ROM.
+Las cuatro habilidades también se probaron estableciendo orbes mediante el script.
+La captura de música y efectos tiene señal estéreo a 48 kHz durante 160,54 segundos.
+No se ha probado en todas las versiones de MAME, otros núcleos o placas físicas.
+
+FUENTES Y EVIDENCIA
+El paquete de fuentes incluye C, arranque Z80, generador de gráficos, scripts de
+construcción y pruebas, capturas y evidencia estática de REA. Compila con SDCC 4.5.
+Para reconstruir se necesita el ZIP original aportado, Python/Pillow, fuentes
+DejaVu Sans Mono y SDCC con sus bibliotecas para Z80. No se incluye el compilador.
+El programa enlazado ocupa menos de 7 KiB de la zona de ROM fija de 48 KiB.
+El ZIP conserva las entradas, nombres, extensiones y tamaños del adjunto original.
