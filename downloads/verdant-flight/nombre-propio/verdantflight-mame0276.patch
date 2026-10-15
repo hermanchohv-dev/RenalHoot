@@ -1,0 +1,55 @@
+--- a/src/mame/tecmo/tecmo.cpp
++++ b/src/mame/tecmo/tecmo.cpp
+@@ -1471,6 +1471,41 @@
+ }
+ 
+ 
++ROM_START( verdantflight )
++	ROM_REGION( 0x20000, "maincpu", 0 )
++	ROM_LOAD( "VerdantFlight-Programa.rom",       0x00000, 0x10000, CRC(5e5bdc33) SHA1(b795084b114d62adece0621e86aef2cf770e9689) )  // c000-ffff is not used
++	ROM_LOAD( "VerdantFlight-Bancos.rom",  0x10000, 0x10000, CRC(5a6947a9) SHA1(18b7aeb0f0e2c396bc759118dd7c45fd6070b804) )  // banked at f000-f7ff
++
++	ROM_REGION( 0x10000, "soundcpu", 0 )
++	ROM_LOAD( "VerdantFlight-CPU-Sonido.rom",  0x0000, 0x8000, CRC(9bc79596) SHA1(61de9ddd45140e8ed88173294bd26147e2abfa21) )
++
++	ROM_REGION( 0x08000, "txtiles", 0 )
++	ROM_LOAD( "VerdantFlight-Texto.rom",  0x00000, 0x08000, CRC(ccb928be) SHA1(e15180d1c564f7d3965605f4472877ef651e09ee) )  // characters
++
++	ROM_REGION( 0x40000, "sprites", 0 )
++	ROM_LOAD( "VerdantFlight-Sprites-1.rom",  0x00000, 0x10000, CRC(300872ac) SHA1(673982f0fc6cc959758184c59101a15d2a4d2aec) )  // sprites
++	ROM_LOAD( "VerdantFlight-Sprites-2.rom",  0x10000, 0x10000, CRC(d7978eeb) SHA1(1adc95bebe9eea8c112d40cd04ab7a8d75c4f961) )  // sprites
++	ROM_LOAD( "VerdantFlight-Sprites-3.rom",  0x20000, 0x10000, CRC(d7978eeb) SHA1(1adc95bebe9eea8c112d40cd04ab7a8d75c4f961) )  // sprites
++	ROM_LOAD( "VerdantFlight-Sprites-4.rom",  0x30000, 0x10000, CRC(d7978eeb) SHA1(1adc95bebe9eea8c112d40cd04ab7a8d75c4f961) )  // sprites
++
++	ROM_REGION( 0x40000, "fgtiles", 0 )
++	ROM_LOAD( "VerdantFlight-Primer-Plano-1.rom",  0x00000, 0x10000, CRC(d7978eeb) SHA1(1adc95bebe9eea8c112d40cd04ab7a8d75c4f961) )  // tiles #1
++	ROM_LOAD( "VerdantFlight-Primer-Plano-2.rom", 0x10000, 0x10000, CRC(d7978eeb) SHA1(1adc95bebe9eea8c112d40cd04ab7a8d75c4f961) )  // tiles #1
++	ROM_LOAD( "VerdantFlight-Primer-Plano-3.rom", 0x20000, 0x10000, CRC(d7978eeb) SHA1(1adc95bebe9eea8c112d40cd04ab7a8d75c4f961) )  // tiles #1
++	ROM_LOAD( "VerdantFlight-Primer-Plano-4.rom",  0x30000, 0x10000, CRC(d7978eeb) SHA1(1adc95bebe9eea8c112d40cd04ab7a8d75c4f961) )  // tiles #1
++
++	ROM_REGION( 0x40000, "bgtiles", 0 )
++	ROM_LOAD( "VerdantFlight-Fondo-1.rom",  0x00000, 0x10000, CRC(460f4c51) SHA1(c9d2bbbc986899eca541f245ebcf8c11308140dc) )  // tiles #2
++	ROM_LOAD( "VerdantFlight-Fondo-2.rom", 0x10000, 0x10000, CRC(d7978eeb) SHA1(1adc95bebe9eea8c112d40cd04ab7a8d75c4f961) )  // tiles #2
++	ROM_LOAD( "VerdantFlight-Fondo-3.rom", 0x20000, 0x10000, CRC(d7978eeb) SHA1(1adc95bebe9eea8c112d40cd04ab7a8d75c4f961) )  // tiles #2
++	ROM_LOAD( "VerdantFlight-Fondo-4.rom",  0x30000, 0x10000, CRC(d7978eeb) SHA1(1adc95bebe9eea8c112d40cd04ab7a8d75c4f961) )  // tiles #2
++
++	ROM_REGION( 0x8000, "adpcm", 0 )    // ADPCM samples
++	ROM_LOAD( "VerdantFlight-Muestras.rom",  0x0000, 0x8000, CRC(d78afa05) SHA1(b02a739b045f5cddf943ce59226ef234463eeebe) )
++ROM_END
++
++GAME( 2026, verdantflight, 0, geminib, gemini, tecmo_state, init_gemini, ROT90, "Homebrew", "Verdant Flight", MACHINE_SUPPORTS_SAVE )
++
+ GAME( 1986, rygar,      0,        rygar,     rygar,     tecmo_state, init_rygar,    ROT0,  "Tecmo",   "Rygar (US set 1)",              MACHINE_SUPPORTS_SAVE )
+ GAME( 1986, rygar2,     rygar,    rygar,     rygar,     tecmo_state, init_rygar,    ROT0,  "Tecmo",   "Rygar (US set 2)",              MACHINE_SUPPORTS_SAVE )
+ GAME( 1986, rygar3,     rygar,    rygar,     rygar,     tecmo_state, init_rygar,    ROT0,  "Tecmo",   "Rygar (US set 3 Old Version)",  MACHINE_SUPPORTS_SAVE )
+--- a/src/mame/mame.lst
++++ b/src/mame/mame.lst
+@@ -45337,6 +45337,8 @@
+ silkwormb
+ silkwormb2
+ 
++verdantflight                   // 2026 native Verdant Flight
++
+ @source:tecmo/tecmo16.cpp
+ fstarfrc
+ fstarfrcj

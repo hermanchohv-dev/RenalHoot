@@ -1,5 +1,11 @@
 # Verdant Flight · Native Arcade Edition
 
+
+> **Compatibilidad M15 pendiente:** la prueba de esta página corresponde a MAME
+> 0.276 de ordenador. El firmware `maincode_64` examinado integra un catálogo
+> arcade diferente. El conjunto con nombres propios necesita adaptar ese núcleo.
+> [Nombres propios, informe y límites de compatibilidad](nombre-propio/README.md).
+
 Adaptación nativa de Verdant Flight a Z80 sobre el hardware Tecmo que MAME emula
 como `geminib`. Usa programa y gráficos nuevos, con música y efectos de las ROM
 de sonido originales aportadas. El HTML anterior permanece como versión distinta.

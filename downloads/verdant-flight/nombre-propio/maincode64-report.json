@@ -1,0 +1,192 @@
+{
+  "file": "maincode_64",
+  "size": 15288132,
+  "sha256": "c04d4674edb7b355c5cf6d2e714d53ed089bfc82f693e3ebf9e018f69f9de899",
+  "decoding": {
+    "type": "repeating XOR",
+    "period_bytes": 64,
+    "known_repeated_block_count": 696,
+    "verification": "17 reconstructed ROM records match sizes and CRC32 of user-supplied arcade ROM images"
+  },
+  "embedded_labels": {
+    "model": " M18",
+    "version": "V6.1.4",
+    "build": "Aug  6 2025--21:04:09"
+  },
+  "architecture_evidence": {
+    "status": "inference, not an executable header",
+    "source_path_contains": "runing_o_mips16",
+    "hardware_family_strings": [
+      "core_symphony",
+      "concerto"
+    ]
+  },
+  "arcade_catalog": {
+    "name": "geminib",
+    "table_offset": "0xe24af0",
+    "driver_record_offset": "0xe24a60",
+    "entries": [
+      {
+        "index": 0,
+        "file_offset": "0xe24af0",
+        "name": "gww2-6c.bin",
+        "size": 65536,
+        "crc32": "cd79c5b3",
+        "flags": "0x1100001",
+        "name_offset": "0x9f690"
+      },
+      {
+        "index": 1,
+        "file_offset": "0xe24b00",
+        "name": "gw05-6s.rom",
+        "size": 65536,
+        "crc32": "5a6947a9",
+        "flags": "0x1100001",
+        "name_offset": "0x9f69c"
+      },
+      {
+        "index": 2,
+        "file_offset": "0xe24b10",
+        "name": "gw03-5h.rom",
+        "size": 32768,
+        "crc32": "9bc79596",
+        "flags": "0x1100002",
+        "name_offset": "0x9f6a8"
+      },
+      {
+        "index": 3,
+        "file_offset": "0xe24b20",
+        "name": "gw02-3h.rom",
+        "size": 32768,
+        "crc32": "7acc8d35",
+        "flags": "0x200003",
+        "name_offset": "0x9f6b4"
+      },
+      {
+        "index": 4,
+        "file_offset": "0xe24b30",
+        "name": "gw06-1c.rom",
+        "size": 65536,
+        "crc32": "4ea51631",
+        "flags": "0x200004",
+        "name_offset": "0x9f6c0"
+      },
+      {
+        "index": 5,
+        "file_offset": "0xe24b40",
+        "name": "gw07-1d.rom",
+        "size": 65536,
+        "crc32": "da42637e",
+        "flags": "0x200004",
+        "name_offset": "0x9f6cc"
+      },
+      {
+        "index": 6,
+        "file_offset": "0xe24b50",
+        "name": "gw08-1f.rom",
+        "size": 65536,
+        "crc32": "0b4e8d70",
+        "flags": "0x200004",
+        "name_offset": "0x9f6d8"
+      },
+      {
+        "index": 7,
+        "file_offset": "0xe24b60",
+        "name": "gw09-1h.rom",
+        "size": 65536,
+        "crc32": "b65c5e4c",
+        "flags": "0x200004",
+        "name_offset": "0x9f6e4"
+      },
+      {
+        "index": 8,
+        "file_offset": "0xe24b70",
+        "name": "gw10-1n.rom",
+        "size": 65536,
+        "crc32": "5e84cd4f",
+        "flags": "0x200005",
+        "name_offset": "0x9f6f0"
+      },
+      {
+        "index": 9,
+        "file_offset": "0xe24b80",
+        "name": "gw11-2na.rom",
+        "size": 65536,
+        "crc32": "08b458e1",
+        "flags": "0x200005",
+        "name_offset": "0x9f6fc"
+      },
+      {
+        "index": 10,
+        "file_offset": "0xe24b90",
+        "name": "gw12-2nb.rom",
+        "size": 65536,
+        "crc32": "229c9714",
+        "flags": "0x200005",
+        "name_offset": "0x9f70c"
+      },
+      {
+        "index": 11,
+        "file_offset": "0xe24ba0",
+        "name": "gw13-3n.rom",
+        "size": 65536,
+        "crc32": "c5dfaf47",
+        "flags": "0x200005",
+        "name_offset": "0x9f71c"
+      },
+      {
+        "index": 12,
+        "file_offset": "0xe24bb0",
+        "name": "gw14-1r.rom",
+        "size": 65536,
+        "crc32": "9c10e5b5",
+        "flags": "0x200006",
+        "name_offset": "0x9f728"
+      },
+      {
+        "index": 13,
+        "file_offset": "0xe24bc0",
+        "name": "gw15-2ra.rom",
+        "size": 65536,
+        "crc32": "4cd18cfa",
+        "flags": "0x200006",
+        "name_offset": "0x9f734"
+      },
+      {
+        "index": 14,
+        "file_offset": "0xe24bd0",
+        "name": "gw16-2rb.rom",
+        "size": 65536,
+        "crc32": "f911c7be",
+        "flags": "0x200006",
+        "name_offset": "0x9f744"
+      },
+      {
+        "index": 15,
+        "file_offset": "0xe24be0",
+        "name": "gw17-3r.rom",
+        "size": 65536,
+        "crc32": "79a9ce25",
+        "flags": "0x200006",
+        "name_offset": "0x9f754"
+      },
+      {
+        "index": 16,
+        "file_offset": "0xe24bf0",
+        "name": "gw01-6a.rom",
+        "size": 32768,
+        "crc32": "d78afa05",
+        "flags": "0x400007",
+        "name_offset": "0x9f760"
+      }
+    ],
+    "format": "records match BurnRomInfo name/size/CRC/type layout; exact engine/version not established"
+  },
+  "limitations": [
+    "Firmware was not executed or modified",
+    "No proof that maincode_64 rather than maincode_128 is active on the device",
+    "No M15 hardware runtime validation",
+    "No verified firmware-patch or installation method",
+    "REA rejected the original unknown format; firmware inspection also lacks Binwalk provider. Decoding and table evidence are from the documented Python analysis, not a successful REA decompilation."
+  ]
+}

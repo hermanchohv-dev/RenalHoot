@@ -1,0 +1,135 @@
+{
+  "set": "verdantflight",
+  "title": "Verdant Flight",
+  "bytes_unchanged": true,
+  "roms": [
+    {
+      "old": "G-2.6d",
+      "new": "VerdantFlight-Programa.rom",
+      "size": 65536,
+      "sha1": "b795084b114d62adece0621e86aef2cf770e9689",
+      "crc32": "5e5bdc33"
+    },
+    {
+      "old": "gw13-3n.rom",
+      "new": "VerdantFlight-Primer-Plano-4.rom",
+      "size": 65536,
+      "sha1": "1adc95bebe9eea8c112d40cd04ab7a8d75c4f961",
+      "crc32": "d7978eeb"
+    },
+    {
+      "old": "gw05-6s.rom",
+      "new": "VerdantFlight-Bancos.rom",
+      "size": 65536,
+      "sha1": "18b7aeb0f0e2c396bc759118dd7c45fd6070b804",
+      "crc32": "5a6947a9"
+    },
+    {
+      "old": "gw07-1d.rom",
+      "new": "VerdantFlight-Sprites-2.rom",
+      "size": 65536,
+      "sha1": "1adc95bebe9eea8c112d40cd04ab7a8d75c4f961",
+      "crc32": "d7978eeb"
+    },
+    {
+      "old": "gw03-5h.rom",
+      "new": "VerdantFlight-CPU-Sonido.rom",
+      "size": 32768,
+      "sha1": "61de9ddd45140e8ed88173294bd26147e2abfa21",
+      "crc32": "9bc79596"
+    },
+    {
+      "old": "gw01-6a.rom",
+      "new": "VerdantFlight-Muestras.rom",
+      "size": 32768,
+      "sha1": "b02a739b045f5cddf943ce59226ef234463eeebe",
+      "crc32": "d78afa05"
+    },
+    {
+      "old": "gw10-1n.rom",
+      "new": "VerdantFlight-Primer-Plano-1.rom",
+      "size": 65536,
+      "sha1": "1adc95bebe9eea8c112d40cd04ab7a8d75c4f961",
+      "crc32": "d7978eeb"
+    },
+    {
+      "old": "gw04-5s.rom",
+      "new": "VerdantFlight-Referencia-No-Usada.rom",
+      "size": 65536,
+      "sha1": "34167af8456a081f68b338f10d4319ce1e703fd4",
+      "crc32": "ff9de855"
+    },
+    {
+      "old": "gw02-3h.rom",
+      "new": "VerdantFlight-Texto.rom",
+      "size": 32768,
+      "sha1": "e15180d1c564f7d3965605f4472877ef651e09ee",
+      "crc32": "ccb928be"
+    },
+    {
+      "old": "gw09-1h.rom",
+      "new": "VerdantFlight-Sprites-4.rom",
+      "size": 65536,
+      "sha1": "1adc95bebe9eea8c112d40cd04ab7a8d75c4f961",
+      "crc32": "d7978eeb"
+    },
+    {
+      "old": "gw12-2nb.rom",
+      "new": "VerdantFlight-Primer-Plano-3.rom",
+      "size": 65536,
+      "sha1": "1adc95bebe9eea8c112d40cd04ab7a8d75c4f961",
+      "crc32": "d7978eeb"
+    },
+    {
+      "old": "gw17-3r.rom",
+      "new": "VerdantFlight-Fondo-4.rom",
+      "size": 65536,
+      "sha1": "1adc95bebe9eea8c112d40cd04ab7a8d75c4f961",
+      "crc32": "d7978eeb"
+    },
+    {
+      "old": "gw15-2ra.rom",
+      "new": "VerdantFlight-Fondo-2.rom",
+      "size": 65536,
+      "sha1": "1adc95bebe9eea8c112d40cd04ab7a8d75c4f961",
+      "crc32": "d7978eeb"
+    },
+    {
+      "old": "gw11-2na.rom",
+      "new": "VerdantFlight-Primer-Plano-2.rom",
+      "size": 65536,
+      "sha1": "1adc95bebe9eea8c112d40cd04ab7a8d75c4f961",
+      "crc32": "d7978eeb"
+    },
+    {
+      "old": "gw14-1r.rom",
+      "new": "VerdantFlight-Fondo-1.rom",
+      "size": 65536,
+      "sha1": "c9d2bbbc986899eca541f245ebcf8c11308140dc",
+      "crc32": "460f4c51"
+    },
+    {
+      "old": "gw16-2rb.rom",
+      "new": "VerdantFlight-Fondo-3.rom",
+      "size": 65536,
+      "sha1": "1adc95bebe9eea8c112d40cd04ab7a8d75c4f961",
+      "crc32": "d7978eeb"
+    },
+    {
+      "old": "gw06-1c.rom",
+      "new": "VerdantFlight-Sprites-1.rom",
+      "size": 65536,
+      "sha1": "673982f0fc6cc959758184c59101a15d2a4d2aec",
+      "crc32": "300872ac"
+    },
+    {
+      "old": "gw08-1f.rom",
+      "new": "VerdantFlight-Sprites-3.rom",
+      "size": 65536,
+      "sha1": "1adc95bebe9eea8c112d40cd04ab7a8d75c4f961",
+      "crc32": "d7978eeb"
+    }
+  ],
+  "M15_compatibility": "unverified; emulator/core identification required",
+  "driver_status": "source prepared for MAME 0.276; not compiled or run"
+}
