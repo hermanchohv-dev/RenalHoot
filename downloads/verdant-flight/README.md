@@ -1,3 +1,5 @@
+[Descargar edición HTML sin conexión](html/Verdant-Flight-HTML.zip) · [Instrucciones](html/LEEME.txt)
+
 [Proyecto completo 1.1: fuentes, compilación, ROMs y pruebas](PROYECTO-COMPLETO.md)
 
 # Verdant Flight · Native Arcade Edition
