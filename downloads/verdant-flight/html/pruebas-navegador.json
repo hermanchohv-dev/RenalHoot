@@ -1,12 +1,12 @@
 {
   "browser": "Chromium 151.0.7922.34",
   "mode": "headless; file://; offline contexts",
-  "html_sha256": "0879394412c3b3d8aecc8225835172db6cbb0e669ba377eaa205683897c171c5",
+  "html_sha256": "953ecb972a99d8a51e5740c65e618e0fe2dcc1f840e5a81e4378d3958e19d2de",
   "passed": 26,
   "checks": [
     "offline menu and title",
     "start flight",
-    "embedded music plays",
+    "no original game audio embedded",
     "effects audio context running",
     "movement ArrowLeft",
     "movement ArrowRight",
@@ -15,10 +15,10 @@
     "fire creates shots",
     "orb consumed",
     "pause freezes simulation",
-    "pause stops music",
-    "resume restarts music",
-    "mute stops music",
-    "unmute restarts music",
+    "first-edition sound enabled",
+    "resume flight",
+    "mute effects",
+    "unmute effects",
     "focus loss pauses",
     "no remote requests",
     "no desktop script errors",
@@ -33,5 +33,5 @@
   ],
   "errors": [],
   "remote_requests": [],
-  "scope": "Smoke tests of real input, audio playback and responsive layout. No full three-stage completion run. No Safari/Firefox or physical mobile device test. MP3 playback verified; perceived audio quality not assessed by automated tests."
+  "scope": "Smoke tests of real input, audio playback and responsive layout. No full three-stage completion run. No Safari/Firefox or physical mobile device test. Original first-edition Web Audio synthesis preserved; no music or arcade audio recording embedded. Perceived sound quality not assessed by automated tests."
 }

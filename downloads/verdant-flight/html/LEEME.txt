@@ -3,7 +3,7 @@ VERDANT FLIGHT — EDICIÓN HTML
 1. Descomprime Verdant-Flight-HTML.zip.
 2. Abre Verdant-Flight.html con tu navegador (por ejemplo Chrome o Edge).
 3. Pulsa INICIAR VUELO. No requiere instalación, Internet ni servidor local.
-   El navegador puede requerir un clic en SONIDO para autorizar el audio.
+   El navegador puede requerir un clic en SONIDO para autorizar los efectos.
 
 CONTROLES
 Flechas / WASD: mover. Z / Espacio: disparar.
@@ -13,9 +13,9 @@ la nave y disparar; usa los botones ORBE, pausa y sonido.
 
 CONTENIDO
 Tres sectores, enemigos, guardianes, cuatro poderes de orbes y récord local.
-Gráficos vectoriales y efectos sintetizados localmente. Música incrustada:
-la grabación MP3 del proyecto anterior, procedente del audio de arcade.
-Es una grabación en bucle, no emulación dinámica del chip de sonido.
+Gráficos vectoriales y los efectos sintetizados de la primera versión web.
+Se ha eliminado la grabación de audio de Gemini Wing. Esta edición no tiene
+música de fondo, igual que la primera versión web.
 Todos los recursos necesarios están dentro del HTML.
 El código JavaScript y CSS se puede leer y editar en el propio archivo.
 
@@ -25,12 +25,12 @@ No ejecuta la ROM Z80 y no es un archivo instalable en MAME o el Game Stick M15.
 PRUEBAS
 26 comprobaciones automatizadas con Chromium 151, abriendo el archivo file://
 en contextos sin conexión: inicio, cuatro direcciones, disparo, consumo de orbe,
-pausa/reanudación, reproducción de música, silencio, pausa al perder el foco,
+pausa/reanudación, activación y silencio de efectos, pausa al perder el foco,
 controles táctiles simulados y disposición vertical/horizontal.
 Sin errores JavaScript ni solicitudes remotas en la prueba de escritorio.
 No se ha repetido una partida completa de tres sectores en esta edición HTML.
 No se ha probado en Safari, Firefox ni un teléfono físico. La prueba de audio
-confirma reproducción y avance temporal, no valora subjetivamente la mezcla.
+confirma el estado del sintetizador, no valora subjetivamente el sonido.
 El récord depende de que el navegador permita almacenamiento local para file://.
 
 Se incluyen test_browser.py, pruebas-navegador.json y una captura JPG.
