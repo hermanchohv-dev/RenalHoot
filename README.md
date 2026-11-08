@@ -1,4 +1,4 @@
-# RenalHoot
+# Mensa Guide
 
 ## Descargar MensaGuide para navegador
 
@@ -10,6 +10,4 @@ Si el enlace no inicia la descarga, [abre el archivo en GitHub](mensaguide/Mensa
 
 [Cambios y funciones pendientes](mensaguide/ACTUALIZACION-26-44.md) · [Documentación de MensaGuide](mensaguide/README.md)
 
-## RenalHoot en línea
 
-https://hermanchohv-dev.github.io/RenalHoot/host.html
