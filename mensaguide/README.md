@@ -1,5 +1,7 @@
 # MensaGuide para navegador — versión web 5
 
+**Descarga actual con iconos de síndromes:** [MensaGuide-iconos-sindromes.html](MensaGuide-iconos-sindromes.html), datos 26.44 (349), con 109 iconos originales a la derecha del nombre en el listado y las fichas. **Download raw file** (47,4 MB). [Detalles](ICONOS-SINDROMES.md).
+
 **Versión actual — datos 26.44 (349):** [MensaGuide-actualizado-26-44.html](MensaGuide-actualizado-26-44.html). Actualización incremental de 137 fichas y seis nuevas; conserva la interfaz, las fotografías y las funciones anteriores. **Download raw file** (47.3 MB). [Cambios y alcance](ACTUALIZACION-26-44.md).
 
 **Última revisión:** [MensaGuide-revision-completa.html](MensaGuide-revision-completa.html), con encabezados recuperados en 45 tablas de síndromes y 255 estructuras moleculares originales. Conserva calendario, iconos, CIMA e imágenes ligeras. **Download raw file** (47,3 MB). Alcance y ocho utilidades pendientes en [REVISION-DE-CONTENIDOS.md](REVISION-DE-CONTENIDOS.md).
