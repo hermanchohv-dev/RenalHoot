@@ -1,5 +1,7 @@
 # MensaGuide para navegador — versión web 5
 
+**Versión actual — datos 26.44 (349):** [MensaGuide-actualizado-26-44.html](MensaGuide-actualizado-26-44.html). Actualización incremental de 137 fichas y seis nuevas; conserva la interfaz, las fotografías y las funciones anteriores. **Download raw file** (47.3 MB). [Cambios y alcance](ACTUALIZACION-26-44.md).
+
 **Última revisión:** [MensaGuide-revision-completa.html](MensaGuide-revision-completa.html), con encabezados recuperados en 45 tablas de síndromes y 255 estructuras moleculares originales. Conserva calendario, iconos, CIMA e imágenes ligeras. **Download raw file** (47,3 MB). Alcance y ocho utilidades pendientes en [REVISION-DE-CONTENIDOS.md](REVISION-DE-CONTENIDOS.md).
 
 **Última descarga corregida:** [MensaGuide-calendario-corregido.html](MensaGuide-calendario-corregido.html), versión ligera con el calendario vacunal original visible, iconos y CIMA. Pulsa **Download raw file** (aproximadamente 45 MB). Detalles en [CALENDARIO-VACUNAL-CORREGIDO.md](CALENDARIO-VACUNAL-CORREGIDO.md).
@@ -30,7 +32,7 @@ Descarga `MensaGuide.html` mediante **Download raw file** en GitHub y ábrelo en
 
 ## Alcance y verificación
 
-Incluye 1.962 registros españoles de MensaGuide 26.41 (345), 88 calculadoras y 11 tablas. Siete módulos de cálculo siguen pendientes. No es una versión oficial ni una réplica completa validada clínicamente.
+La versión actual incluye 1.968 registros españoles de MensaGuide 26.44 (349), 88 calculadoras y 11 tablas. Nueve módulos de cálculo siguen pendientes, incluido PACTO, cuya descripción original está disponible. No es una versión oficial ni una réplica completa validada clínicamente.
 
 Se comprobó el orden en las 275 fichas de antimicrobianos, la bibliografía al final en las 200 que la contienen, los dos modos de nombres y la ausencia de desbordamiento horizontal en anchos de 320, 390, 760, 1024 y 1440 px. Detalles en [v4-validation.json](v4-validation.json). No se han modificado los cálculos.
 

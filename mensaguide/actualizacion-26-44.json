@@ -1,0 +1,1267 @@
+{
+  "previous": "26.41 (345)",
+  "source": "26.44 (349)",
+  "import_date": "08/11/2026",
+  "source_sha256": "0c278e7a723aa6648d602dfc2a3c8cd03048e508482e7fc73325f3a8cd625d8e",
+  "categories": {
+    "antimicrobianos": {
+      "before": 275,
+      "after": 275,
+      "added": [],
+      "changed": [
+        {
+          "id": 21,
+          "name": "Islatravir (ISL)",
+          "fields": [
+            "SIDE_EFFECTS"
+          ]
+        },
+        {
+          "id": 25,
+          "name": "Cefazolina",
+          "fields": [
+            "PK_PD",
+            "SIDE_EFFECTS"
+          ]
+        },
+        {
+          "id": 28,
+          "name": "Taurolidina",
+          "fields": [
+            "SPECTRUM"
+          ]
+        },
+        {
+          "id": 44,
+          "name": "Meropenem",
+          "fields": [
+            "BIBLIOGRAPHY",
+            "INTERACTIONS_OTHER"
+          ]
+        },
+        {
+          "id": 43,
+          "name": "Tedizolid",
+          "fields": [
+            "BIBLIOGRAPHY",
+            "DISSEMINATION_TISSUE",
+            "D_ECMO",
+            "D_OBESE",
+            "D_RENAL_FAILURE",
+            "INTERACTIONS_OTHER",
+            "MICS_GRAMPOSITIVE",
+            "PK_PD",
+            "SIDE_EFFECTS"
+          ]
+        },
+        {
+          "id": 71,
+          "name": "Tecovirimat",
+          "fields": [
+            "TOXICITY_NEURO"
+          ]
+        },
+        {
+          "id": 76,
+          "name": "Pritelivir",
+          "fields": [
+            "TRADENAMES"
+          ]
+        },
+        {
+          "id": 92,
+          "name": "Artemisininas (artesunato, arteméter)",
+          "fields": [
+            "BIBLIOGRAPHY",
+            "D_CRRT",
+            "D_HEMODIALYSIS",
+            "D_PERIT_DIALYSIS",
+            "MECH_ACTION"
+          ]
+        },
+        {
+          "id": 108,
+          "name": "Doxiciclina",
+          "fields": [
+            "BREAKPOINTS",
+            "MECH_ACTION"
+          ]
+        },
+        {
+          "id": 110,
+          "name": "Rifapentina",
+          "fields": [
+            "BIBLIOGRAPHY",
+            "D_ADULT",
+            "D_LACTATION",
+            "HALF_LIFE"
+          ]
+        },
+        {
+          "id": 118,
+          "name": "Linezolid",
+          "fields": [
+            "BIBLIOGRAPHY",
+            "DISSEMINATION_TISSUE",
+            "D_ADULT",
+            "D_LACTATION",
+            "INTERACTIONS_OTHER",
+            "MECH_ACTION",
+            "METABOLISM",
+            "MICS_GRAMPOSITIVE",
+            "PK_PD",
+            "SIDE_EFFECTS"
+          ]
+        },
+        {
+          "id": 145,
+          "name": "Aciclovir",
+          "fields": [
+            "D_ADULT",
+            "SIDE_EFFECTS"
+          ]
+        },
+        {
+          "id": 146,
+          "name": "Etambutol",
+          "fields": [
+            "BIBLIOGRAPHY",
+            "D_ADULT",
+            "D_CHILD",
+            "D_RENAL_FAILURE",
+            "HALF_LIFE",
+            "SIDE_EFFECTS",
+            "SPECTRUM"
+          ]
+        },
+        {
+          "id": 144,
+          "name": "Anticuerpos monoclonales (Acm)⠄Plasma de convalecientes",
+          "fields": [
+            "BIBLIOGRAPHY",
+            "D_TEXT"
+          ]
+        },
+        {
+          "id": 162,
+          "name": "Trimetoprim",
+          "fields": [
+            "D_CRRT"
+          ]
+        },
+        {
+          "id": 165,
+          "name": "Ceftolozano/Tazobactam",
+          "fields": [
+            "BIBLIOGRAPHY",
+            "MECH_ACTION"
+          ]
+        },
+        {
+          "id": 171,
+          "name": "Levofloxacino",
+          "fields": [
+            "BIBLIOGRAPHY",
+            "D_ADULT",
+            "SIDE_EFFECTS"
+          ]
+        },
+        {
+          "id": 181,
+          "name": "Rezafungina",
+          "fields": [
+            "DISSEMINATION_TISSUE"
+          ]
+        },
+        {
+          "id": 211,
+          "name": "Minociclina",
+          "fields": [
+            "BREAKPOINTS"
+          ]
+        },
+        {
+          "id": 216,
+          "name": "Olorofim",
+          "fields": [
+            "BIBLIOGRAPHY",
+            "MECH_ACTION",
+            "SIDE_EFFECTS"
+          ]
+        },
+        {
+          "id": 218,
+          "name": "Fosmanogepix",
+          "fields": [
+            "BIBLIOGRAPHY",
+            "SIDE_EFFECTS"
+          ]
+        },
+        {
+          "id": 217,
+          "name": "Cefpodoxima",
+          "fields": [
+            "BREAKPOINTS"
+          ]
+        },
+        {
+          "id": 223,
+          "name": "Bepirovirsen",
+          "fields": [
+            "TRADENAMES"
+          ]
+        },
+        {
+          "id": 224,
+          "name": "Cefalexina",
+          "fields": [
+            "BREAKPOINTS"
+          ]
+        },
+        {
+          "id": 229,
+          "name": "Pirazinamida",
+          "fields": [
+            "SPECTRUM"
+          ]
+        },
+        {
+          "id": 245,
+          "name": "Oseltamivir",
+          "fields": [
+            "D_CRRT",
+            "D_RENAL_FAILURE"
+          ]
+        },
+        {
+          "id": 250,
+          "name": "Penicilina G",
+          "fields": [
+            "BREAKPOINTS"
+          ]
+        },
+        {
+          "id": 264,
+          "name": "Miltefosina",
+          "fields": [
+            "SIDE_EFFECTS"
+          ]
+        },
+        {
+          "id": 270,
+          "name": "Quinolonas",
+          "fields": [
+            "BIBLIOGRAPHY",
+            "SIDE_EFFECTS"
+          ]
+        },
+        {
+          "id": 269,
+          "name": "Vancomicina",
+          "fields": [
+            "BIBLIOGRAPHY",
+            "DISSEMINATION_CNS",
+            "DISSEMINATION_TISSUE",
+            "PK_PD"
+          ]
+        },
+        {
+          "id": 272,
+          "name": "Cotrimoxazol",
+          "fields": [
+            "BREAKPOINTS"
+          ]
+        },
+        {
+          "id": 275,
+          "name": "Cefiderocol",
+          "fields": [
+            "BIBLIOGRAPHY",
+            "MECH_ACTION"
+          ]
+        }
+      ]
+    },
+    "microorganismos": {
+      "before": 890,
+      "after": 891,
+      "added": [
+        {
+          "id": 891,
+          "name": "Yanggou tick virus (YGTV)"
+        }
+      ],
+      "changed": [
+        {
+          "id": 58,
+          "name": "Orthobunyavirus",
+          "fields": [
+            "BIBLIOGRAPHY",
+            "COMMENTS",
+            "DIAGNOSIS",
+            "GEOGRAPHIC_DIST",
+            "INCUBATION_PERIOD",
+            "INFECTION",
+            "SPECIES"
+          ]
+        },
+        {
+          "id": 88,
+          "name": "Brucella",
+          "fields": [
+            "RESERVOIR",
+            "SPECIES",
+            "TREATMENT"
+          ]
+        },
+        {
+          "id": 93,
+          "name": "Lophomonas blattarum",
+          "fields": [
+            "BIBLIOGRAPHY"
+          ]
+        },
+        {
+          "id": 129,
+          "name": "Verruconis gallopava",
+          "fields": [
+            "DIAGNOSIS"
+          ]
+        },
+        {
+          "id": 165,
+          "name": "Streptococcus grupo viridans",
+          "fields": [
+            "BIBLIOGRAPHY",
+            "INFECTION",
+            "RESERVOIR",
+            "SPECIES",
+            "TREATMENT"
+          ]
+        },
+        {
+          "id": 215,
+          "name": "Escherichia coli",
+          "fields": [
+            "TREATMENT"
+          ]
+        },
+        {
+          "id": 216,
+          "name": "Conidiobolus",
+          "fields": [
+            "BIBLIOGRAPHY",
+            "DIAGNOSIS",
+            "GEOGRAPHIC_DIST",
+            "INFECTION",
+            "TREATMENT"
+          ]
+        },
+        {
+          "id": 222,
+          "name": "Pandoraea",
+          "fields": [
+            "BIBLIOGRAPHY",
+            "TREATMENT"
+          ]
+        },
+        {
+          "id": 225,
+          "name": "Ralstonia",
+          "fields": [
+            "BIBLIOGRAPHY",
+            "INFECTION",
+            "TRANSMISSION_MECH"
+          ]
+        },
+        {
+          "id": 253,
+          "name": "Enterococcus",
+          "fields": [
+            "BIBLIOGRAPHY",
+            "DIAGNOSIS",
+            "TREATMENT"
+          ]
+        },
+        {
+          "id": 286,
+          "name": "Hepatitis C",
+          "fields": [
+            "BIBLIOGRAPHY",
+            "TREATMENT"
+          ]
+        },
+        {
+          "id": 288,
+          "name": "Brugia",
+          "fields": [
+            "INFECTION",
+            "TREATMENT"
+          ]
+        },
+        {
+          "id": 281,
+          "name": "Staphylococcus aureus",
+          "fields": [
+            "BIBLIOGRAPHY",
+            "COMMENTS",
+            "DIAGNOSIS",
+            "TREATMENT"
+          ]
+        },
+        {
+          "id": 298,
+          "name": "Bunyavirus",
+          "fields": [
+            "BIBLIOGRAPHY",
+            "FEATURES",
+            "TRANSMISSION_MECH"
+          ]
+        },
+        {
+          "id": 297,
+          "name": "Plasmodium falciparum",
+          "fields": [
+            "BIBLIOGRAPHY",
+            "COMMENTS"
+          ]
+        },
+        {
+          "id": 306,
+          "name": "Paragonimus",
+          "fields": [
+            "INFECTION"
+          ]
+        },
+        {
+          "id": 304,
+          "name": "Virus de Epstein-Barr (VEB)",
+          "fields": [
+            "BIBLIOGRAPHY",
+            "INFECTION"
+          ]
+        },
+        {
+          "id": 320,
+          "name": "Micobacterias no M. tuberculosis (MNT)",
+          "fields": [
+            "BIBLIOGRAPHY",
+            "INFECTION"
+          ]
+        },
+        {
+          "id": 370,
+          "name": "Cochliomyia hominivorax",
+          "fields": [
+            "INFECTION",
+            "TREATMENT"
+          ]
+        },
+        {
+          "id": 365,
+          "name": "Clostridioides difficile",
+          "fields": [
+            "INFECTION"
+          ]
+        },
+        {
+          "id": 374,
+          "name": "Basidiobolus",
+          "fields": [
+            "BIBLIOGRAPHY",
+            "DIAGNOSIS",
+            "GEOGRAPHIC_DIST",
+            "INFECTION",
+            "TRANSMISSION_MECH",
+            "TREATMENT"
+          ]
+        },
+        {
+          "id": 401,
+          "name": "Alphavirus",
+          "fields": [
+            "BIBLIOGRAPHY",
+            "DIAGNOSIS",
+            "GEOGRAPHIC_DIST",
+            "INCUBATION_PERIOD",
+            "INFECTION",
+            "RESERVOIR",
+            "TREATMENT"
+          ]
+        },
+        {
+          "id": 405,
+          "name": "Ignatzschineria",
+          "fields": [
+            "FEATURES",
+            "INFECTION",
+            "RESERVOIR",
+            "TRANSMISSION_MECH"
+          ]
+        },
+        {
+          "id": 406,
+          "name": "Pneumocystis jirovecii",
+          "fields": [
+            "BIBLIOGRAPHY",
+            "TREATMENT"
+          ]
+        },
+        {
+          "id": 413,
+          "name": "Gripe",
+          "fields": [
+            "BIBLIOGRAPHY",
+            "TREATMENT"
+          ]
+        },
+        {
+          "id": 417,
+          "name": "Kerstersia",
+          "fields": [
+            "BIBLIOGRAPHY",
+            "DIAGNOSIS",
+            "TREATMENT"
+          ]
+        },
+        {
+          "id": 426,
+          "name": "Actinotignum",
+          "fields": [
+            "INFECTION"
+          ]
+        },
+        {
+          "id": 457,
+          "name": "Helicobacter",
+          "fields": [
+            "BIBLIOGRAPHY",
+            "DIAGNOSIS",
+            "RESERVOIR",
+            "TRANSMISSION_MECH",
+            "TREATMENT"
+          ]
+        },
+        {
+          "id": 465,
+          "name": "Mucor",
+          "fields": [
+            "BIBLIOGRAPHY",
+            "TREATMENT"
+          ]
+        },
+        {
+          "id": 466,
+          "name": "Streptococcus agalactiae",
+          "fields": [
+            "BIBLIOGRAPHY",
+            "TREATMENT"
+          ]
+        },
+        {
+          "id": 473,
+          "name": "Stenotrophomonas",
+          "fields": [
+            "BIBLIOGRAPHY",
+            "TREATMENT"
+          ]
+        },
+        {
+          "id": 481,
+          "name": "Staphylococcus plasmocoagulasa-negativa (ECN)",
+          "fields": [
+            "BIBLIOGRAPHY",
+            "DIAGNOSIS"
+          ]
+        },
+        {
+          "id": 495,
+          "name": "Strongyloides",
+          "fields": [
+            "BIBLIOGRAPHY",
+            "INFECTION"
+          ]
+        },
+        {
+          "id": 494,
+          "name": "Dientamoeba fragilis",
+          "fields": [
+            "BIBLIOGRAPHY",
+            "TREATMENT"
+          ]
+        },
+        {
+          "id": 501,
+          "name": "Cryptococcus neoformans y C. gattii",
+          "fields": [
+            "BIBLIOGRAPHY",
+            "DIAGNOSIS"
+          ]
+        },
+        {
+          "id": 514,
+          "name": "Shigella",
+          "fields": [
+            "BIBLIOGRAPHY",
+            "TREATMENT"
+          ]
+        },
+        {
+          "id": 525,
+          "name": "Dengue",
+          "fields": [
+            "BIBLIOGRAPHY",
+            "INCUBATION_PERIOD",
+            "INFECTION",
+            "TRANSMISSION_MECH",
+            "TREATMENT"
+          ]
+        },
+        {
+          "id": 549,
+          "name": "Amebas de vida libre",
+          "fields": [
+            "BIBLIOGRAPHY",
+            "TREATMENT"
+          ]
+        },
+        {
+          "id": 554,
+          "name": "Burkholderia cepacia complex",
+          "fields": [
+            "BIBLIOGRAPHY",
+            "INFECTION",
+            "TREATMENT"
+          ]
+        },
+        {
+          "id": 576,
+          "name": "Metapneumovirus humano (hMPV)",
+          "fields": [
+            "CONTAGIOUS_PERIOD",
+            "INFECTION",
+            "TREATMENT"
+          ]
+        },
+        {
+          "id": 565,
+          "name": "Sarampión, virus del",
+          "fields": [
+            "BIBLIOGRAPHY",
+            "TRANSMISSION_MECH"
+          ]
+        },
+        {
+          "id": 592,
+          "name": "Coccidioides",
+          "fields": [
+            "BIBLIOGRAPHY",
+            "TREATMENT"
+          ]
+        },
+        {
+          "id": 602,
+          "name": "Eggerthella",
+          "fields": [
+            "INFECTION"
+          ]
+        },
+        {
+          "id": 611,
+          "name": "Exophiala",
+          "fields": [
+            "BIBLIOGRAPHY",
+            "INFECTION"
+          ]
+        },
+        {
+          "id": 633,
+          "name": "Neofusicoccum mangiferae",
+          "fields": [
+            "INFECTION"
+          ]
+        },
+        {
+          "id": 691,
+          "name": "Orthohantavirus",
+          "fields": [
+            "BIBLIOGRAPHY",
+            "DIAGNOSIS"
+          ]
+        },
+        {
+          "id": 701,
+          "name": "Burkholderia pseudomallei (grupo)",
+          "fields": [
+            "BIBLIOGRAPHY",
+            "TREATMENT"
+          ]
+        },
+        {
+          "id": 722,
+          "name": "Blastomyces",
+          "fields": [
+            "BIBLIOGRAPHY"
+          ]
+        },
+        {
+          "id": 730,
+          "name": "Candida",
+          "fields": [
+            "BIBLIOGRAPHY",
+            "DIAGNOSIS",
+            "INFECTION",
+            "RESERVOIR",
+            "TREATMENT"
+          ]
+        },
+        {
+          "id": 738,
+          "name": "Staphylococcus otros plasmocoagulasa-positiva",
+          "fields": [
+            "TREATMENT"
+          ]
+        },
+        {
+          "id": 741,
+          "name": "Cyclospora cayetanensis",
+          "fields": [
+            "BIBLIOGRAPHY",
+            "DIAGNOSIS",
+            "TRANSMISSION_MECH"
+          ]
+        },
+        {
+          "id": 745,
+          "name": "Respiratorio sincitial (VRS)",
+          "fields": [
+            "BIBLIOGRAPHY",
+            "COMMENTS",
+            "TREATMENT"
+          ]
+        },
+        {
+          "id": 752,
+          "name": "Inmunodeficiencia humana, virus de la (VIH-1 y VIH-2)",
+          "fields": [
+            "BIBLIOGRAPHY",
+            "DIAGNOSIS",
+            "TREATMENT"
+          ]
+        },
+        {
+          "id": 760,
+          "name": "Corynebacterium",
+          "fields": [
+            "INFECTION"
+          ]
+        },
+        {
+          "id": 772,
+          "name": "Viruela de los monos, virus (MPXV)",
+          "fields": [
+            "TREATMENT"
+          ]
+        },
+        {
+          "id": 784,
+          "name": "Hepatitis E",
+          "fields": [
+            "BIBLIOGRAPHY",
+            "DIAGNOSIS",
+            "INCUBATION_PERIOD"
+          ]
+        },
+        {
+          "id": 799,
+          "name": "Spiroplasma",
+          "fields": [
+            "BIBLIOGRAPHY",
+            "DIAGNOSIS",
+            "GEOGRAPHIC_DIST",
+            "INCUBATION_PERIOD",
+            "INFECTION",
+            "RESERVOIR",
+            "TRANSMISSION_MECH"
+          ]
+        },
+        {
+          "id": 850,
+          "name": "Blastocystis",
+          "fields": [
+            "BIBLIOGRAPHY",
+            "INFECTION",
+            "TREATMENT"
+          ]
+        },
+        {
+          "id": 851,
+          "name": "Oropouche (OROV)",
+          "fields": [
+            "BIBLIOGRAPHY",
+            "INFECTION",
+            "TRANSMISSION_MECH"
+          ]
+        },
+        {
+          "id": 854,
+          "name": "Aspergillus",
+          "fields": [
+            "BIBLIOGRAPHY",
+            "DIAGNOSIS"
+          ]
+        },
+        {
+          "id": 862,
+          "name": "Enterovirus",
+          "fields": [
+            "BIBLIOGRAPHY",
+            "INFECTION"
+          ]
+        },
+        {
+          "id": 869,
+          "name": "Diaporthe",
+          "fields": [
+            "BIBLIOGRAPHY",
+            "FEATURES",
+            "INFECTION",
+            "SPECIES"
+          ]
+        },
+        {
+          "id": 888,
+          "name": "Hepatitis D o delta",
+          "fields": [
+            "BIBLIOGRAPHY",
+            "TREATMENT"
+          ]
+        },
+        {
+          "id": 890,
+          "name": "Mycobacterium tuberculosis complex",
+          "fields": [
+            "BIBLIOGRAPHY",
+            "DIAGNOSIS",
+            "TREATMENT"
+          ]
+        }
+      ]
+    },
+    "sindromes": {
+      "before": 109,
+      "after": 109,
+      "added": [],
+      "changed": [
+        {
+          "id": 4,
+          "name": "Mielopatía de causa infecciosa⠄Mielitis",
+          "fields": [
+            "TREATMENT"
+          ]
+        },
+        {
+          "id": 13,
+          "name": "Colecistitis y colangitis",
+          "fields": [
+            "COMMENT_NAME",
+            "TREATMENT_ROWS"
+          ]
+        },
+        {
+          "id": 22,
+          "name": "Osteomielitis⠄Infección de una fractura",
+          "fields": [
+            "BIBLIOGRAPHY",
+            "MICS_ROWS"
+          ]
+        },
+        {
+          "id": 30,
+          "name": "Infección de un catéter IV⠄Fiebre por contaminación del líquido perfundido",
+          "fields": [
+            "BIBLIOGRAPHY",
+            "COMMENT_NAME",
+            "EXAMINATION_STUDIES",
+            "MEASURE_ROWS",
+            "OTHER_MEASURES",
+            "TREATMENT"
+          ]
+        },
+        {
+          "id": 26,
+          "name": "Artritis infecciosa",
+          "fields": [
+            "EXAMINATION_GENERAL"
+          ]
+        },
+        {
+          "id": 27,
+          "name": "Complicaciones infecciosas en pacientes con ECMO",
+          "fields": [
+            "COMMENT_NAME"
+          ]
+        },
+        {
+          "id": 28,
+          "name": "Abscesos intraabdominales, anorrectales y prostático",
+          "fields": [
+            "BIBLIOGRAPHY",
+            "EXAMINATION_OTHER",
+            "MICS_ROWS",
+            "OTHER_MEASURES",
+            "TREATMENT",
+            "TREATMENT_ROWS"
+          ]
+        },
+        {
+          "id": 38,
+          "name": "Pielonefritis",
+          "fields": [
+            "TREATMENT"
+          ]
+        },
+        {
+          "id": 42,
+          "name": "Úlcera cutánea",
+          "fields": [
+            "EXAMINATION_STUDIES"
+          ]
+        },
+        {
+          "id": 45,
+          "name": "Fiebre de origen desconocido en pacientes inmunocompetentes",
+          "fields": [
+            "EXAMINATION_OTHER"
+          ]
+        },
+        {
+          "id": 61,
+          "name": "Sinusitis",
+          "fields": [
+            "BIBLIOGRAPHY",
+            "EXAMINATION_STUDIES",
+            "MICS_ROWS",
+            "OTHER_MEASURES",
+            "TREATMENT"
+          ]
+        },
+        {
+          "id": 60,
+          "name": "Infecciones transmitidas por artrópodos",
+          "fields": [
+            "MICS_ROWS"
+          ]
+        },
+        {
+          "id": 72,
+          "name": "Fiebre en usuarios de drogas por vía parenteral",
+          "fields": [
+            "OTHER_MEASURES"
+          ]
+        },
+        {
+          "id": 81,
+          "name": "Infecciones del párpado, el sistema lagrimal, la conjuntiva o la córnea⠄Celulitis orbitaria",
+          "fields": [
+            "BIBLIOGRAPHY",
+            "MICS_ROWS",
+            "TREATMENT_ROWS"
+          ]
+        },
+        {
+          "id": 85,
+          "name": "Tratamiento de infecciones por Enterobacterales resistentes a β-lactámicos",
+          "fields": [
+            "BIBLIOGRAPHY",
+            "MICS_ROWS"
+          ]
+        },
+        {
+          "id": 88,
+          "name": "Sepsis y shock séptico",
+          "fields": [
+            "BIBLIOGRAPHY",
+            "COMMENT_NAME",
+            "MEASURE_ROWS",
+            "TREATMENT"
+          ]
+        },
+        {
+          "id": 91,
+          "name": "Alergia a los antibióticos",
+          "fields": [
+            "BIBLIOGRAPHY",
+            "TREATMENT_ROWS"
+          ]
+        },
+        {
+          "id": 93,
+          "name": "Infecciones de la columna vertebral o de implantes espinales",
+          "fields": [
+            "BIBLIOGRAPHY",
+            "MICS_ROWS"
+          ]
+        },
+        {
+          "id": 98,
+          "name": "Infecciones de la piel, tejido subcutáneo y fascia",
+          "fields": [
+            "MICS_ROWS"
+          ]
+        },
+        {
+          "id": 99,
+          "name": "Fiebre neutropénica (incluyendo en el TPH)",
+          "fields": [
+            "BIBLIOGRAPHY",
+            "EXAMINATION_IMAGE",
+            "TREATMENT_ROWS"
+          ]
+        },
+        {
+          "id": 102,
+          "name": "Encefalitis",
+          "fields": [
+            "BIBLIOGRAPHY",
+            "EXAMINATION_IMAGE",
+            "EXAMINATION_OTHER",
+            "EXAMINATION_STUDIES",
+            "MICS_ROWS",
+            "OTHER_MEASURES",
+            "TREATMENT"
+          ]
+        },
+        {
+          "id": 97,
+          "name": "Adenitis infecciosa⠄Linfangitis aguda",
+          "fields": [
+            "MICS_ROWS",
+            "TREATMENT_ROWS"
+          ]
+        },
+        {
+          "id": 104,
+          "name": "Neumonía",
+          "fields": [
+            "BIBLIOGRAPHY",
+            "EXAMINATION_STUDIES",
+            "MICS_ROWS",
+            "TREATMENT_ROWS"
+          ]
+        },
+        {
+          "id": 105,
+          "name": "Endocarditis infecciosa (EI)",
+          "fields": [
+            "BIBLIOGRAPHY",
+            "COMMENT_NAME",
+            "EXAMINATION_IMAGE",
+            "EXAMINATION_STUDIES",
+            "TREATMENT_ROWS"
+          ]
+        },
+        {
+          "id": 106,
+          "name": "Biomarcadores de inflamación/infección⠄Reactantes de fase aguda",
+          "fields": [
+            "BIBLIOGRAPHY",
+            "MICS_ROWS"
+          ]
+        }
+      ]
+    },
+    "profilaxis": {
+      "before": 83,
+      "after": 83,
+      "added": [],
+      "changed": [
+        {
+          "id": 29,
+          "name": "Profilaxis de la infección fúngica invasiva en pacientes onco-hematológicos",
+          "fields": [
+            "BIBLIOGRAPHY",
+            "HOST"
+          ]
+        },
+        {
+          "id": 31,
+          "name": "Infección urinaria recurrente",
+          "fields": [
+            "COMMENTS",
+            "HOST"
+          ]
+        },
+        {
+          "id": 42,
+          "name": "Infecciones en receptores de un TOS (prevención)",
+          "fields": [
+            "BIBLIOGRAPHY",
+            "PROPHYLAXIS"
+          ]
+        },
+        {
+          "id": 47,
+          "name": "Infección de un catéter venoso (prevención)",
+          "fields": [
+            "BIBLIOGRAPHY",
+            "PROPHYLAXIS"
+          ]
+        },
+        {
+          "id": 56,
+          "name": "Infección quirúrgica (2): profilaxis por tipo de cirugía",
+          "fields": [
+            "BIBLIOGRAPHY",
+            "ETIOLOGY",
+            "HOST_SITUATION"
+          ]
+        },
+        {
+          "id": 58,
+          "name": "Infección del catéter de hemodiálisis (prevención)",
+          "fields": [
+            "BIBLIOGRAPHY",
+            "ETIOLOGY",
+            "PROPHYLAXIS"
+          ]
+        },
+        {
+          "id": 63,
+          "name": "Tuberculosis, prevención (tratamiento de la infección latente)",
+          "fields": [
+            "HOST"
+          ]
+        },
+        {
+          "id": 65,
+          "name": "Esplenectomía, prevención de las infecciones",
+          "fields": [
+            "BIBLIOGRAPHY",
+            "HOST_SITUATION"
+          ]
+        },
+        {
+          "id": 72,
+          "name": "Sarampión (profilaxis posexposición)",
+          "fields": [
+            "BIBLIOGRAPHY",
+            "HOST_SITUATION",
+            "PROPHYLAXIS"
+          ]
+        },
+        {
+          "id": 83,
+          "name": "Infección quirúrgica (1): principios de profilaxis antibiótica",
+          "fields": [
+            "BIBLIOGRAPHY",
+            "ETIOLOGY",
+            "PROPHYLAXIS"
+          ]
+        }
+      ]
+    },
+    "vacunas": {
+      "before": 35,
+      "after": 35,
+      "added": [],
+      "changed": [
+        {
+          "id": 7,
+          "name": "Tuberculosis, vacunación",
+          "fields": [
+            "TEXT12"
+          ]
+        },
+        {
+          "id": 20,
+          "name": "Virus respiratorio sincitial, vacunación",
+          "fields": [
+            "BIBLIOGRAPHY",
+            "TEXT12"
+          ]
+        },
+        {
+          "id": 28,
+          "name": "Papilomavirus humanos, vacunación",
+          "fields": [
+            "BIBLIOGRAPHY",
+            "TEXT12"
+          ]
+        }
+      ]
+    },
+    "aislamiento": {
+      "before": 4,
+      "after": 4,
+      "added": [],
+      "changed": [
+        {
+          "id": 2,
+          "name": "Aislamiento de tipo gotas",
+          "fields": [
+            "INDICATIONS_TEXT_1"
+          ]
+        }
+      ]
+    },
+    "utilidades": {
+      "before": 108,
+      "after": 109,
+      "added": [
+        {
+          "id": 109,
+          "name": "PACTO (riesgo de EI)"
+        }
+      ],
+      "changed": [
+        {
+          "id": 73,
+          "name": "SRIS, criterios de",
+          "fields": [
+            "COMMENT_NAME"
+          ]
+        }
+      ]
+    },
+    "abreviaturas": {
+      "before": 458,
+      "after": 462,
+      "added": [
+        {
+          "id": 459,
+          "name": "SVR"
+        },
+        {
+          "id": 460,
+          "name": "RGB"
+        },
+        {
+          "id": 461,
+          "name": "NAC"
+        },
+        {
+          "id": 462,
+          "name": "NAV"
+        }
+      ],
+      "changed": [
+        {
+          "id": 213,
+          "name": "ECOFF",
+          "fields": [
+            "COMMENT"
+          ]
+        }
+      ]
+    }
+  },
+  "matching": "Exact original names; case-insensitive abbreviation names; existing HTML IDs retained",
+  "retained_absent_records": [],
+  "molecular_changes": [],
+  "table_cells_changed": 0,
+  "source_records": 1968,
+  "total_records": 1968,
+  "existing_ids_preserved": true,
+  "interface_images_calculator_code_preserved": true
+}

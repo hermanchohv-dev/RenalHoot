@@ -1,0 +1,105 @@
+{
+  "source": "26.44 (349)",
+  "records_rendered": 1968,
+  "javascript_errors": [],
+  "offline_rendering": true,
+  "pending_utilities": [
+    {
+      "cat": "utilidades",
+      "id": 19,
+      "name": "Administración de β-lactámicos IV (concentración y %T > CIM)",
+      "heading": true,
+      "body": 2512,
+      "table": false,
+      "pending": true,
+      "forms": 0
+    },
+    {
+      "cat": "utilidades",
+      "id": 22,
+      "name": "Bacteriemia en neutropenia febril",
+      "heading": true,
+      "body": 474,
+      "table": false,
+      "pending": true,
+      "forms": 0
+    },
+    {
+      "cat": "utilidades",
+      "id": 91,
+      "name": "BOSS-3 (bacteriemia en neoplasia hematológica)",
+      "heading": true,
+      "body": 541,
+      "table": false,
+      "pending": true,
+      "forms": 0
+    },
+    {
+      "cat": "utilidades",
+      "id": 108,
+      "name": "Candida score",
+      "heading": true,
+      "body": 1067,
+      "table": false,
+      "pending": true,
+      "forms": 0
+    },
+    {
+      "cat": "utilidades",
+      "id": 93,
+      "name": "Meropenem (dosis en TRR)",
+      "heading": true,
+      "body": 0,
+      "table": false,
+      "pending": true,
+      "forms": 0
+    },
+    {
+      "cat": "utilidades",
+      "id": 104,
+      "name": "Meropenem y piperacilina/tazobactam, dosis en TRR",
+      "heading": true,
+      "body": 1101,
+      "table": false,
+      "pending": true,
+      "forms": 0
+    },
+    {
+      "cat": "utilidades",
+      "id": 18,
+      "name": "Piperacilina/tazobactam (dosis en TRR)",
+      "heading": true,
+      "body": 0,
+      "table": false,
+      "pending": true,
+      "forms": 0
+    },
+    {
+      "cat": "utilidades",
+      "id": 62,
+      "name": "Vancomicina, ajuste de dosis",
+      "heading": true,
+      "body": 2220,
+      "table": false,
+      "pending": true,
+      "forms": 0
+    },
+    {
+      "cat": "utilidades",
+      "id": 109,
+      "name": "PACTO (riesgo de EI)",
+      "heading": true,
+      "body": 1447,
+      "table": false,
+      "pending": true,
+      "forms": 0
+    }
+  ],
+  "assets": {
+    "photos": 435,
+    "structures": 255,
+    "calculators": 88,
+    "sourceDate": true
+  },
+  "note": "Imported original data; native algorithms have not been changed or clinically revalidated."
+}
